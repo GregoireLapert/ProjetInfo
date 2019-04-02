@@ -31,7 +31,20 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="acteur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="allegro.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="intervenant.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="proto.h" />
+		<Unit filename="structure.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
