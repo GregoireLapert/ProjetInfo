@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1554034282 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\acteur.c
+
+1554035223 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\intervenant.c
+	<allegro.h>
+
+1554216760 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\main.c
+	<allegro.h>
+	<time.h>
+	"proto.h"
+
+1554215107 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\allegro.c
+	"proto.h"
+	<allegro.h>
+
+1554216760 d:\cour\informatique\projet perso\projet-informatique\projetinfo\proto.h
+	<allegro.h>
+
+1554216789 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\structure.c
+	<stdlib.h>
+	<stdio.h>
+	"proto.h"
+	<time.h>
+
