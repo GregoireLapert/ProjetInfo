@@ -6,7 +6,7 @@
 int main()
 {
 
-    // Il y aura du hasard
+    // Il y aura du hasar
     srand(time(NULL));
 
     // Lancer allegro et le mode graphique
@@ -20,10 +20,10 @@ int main()
         allegro_exit();
         exit(EXIT_FAILURE);
     }
-    t_listeActeurs* ancre=creerListe(5);
+    t_listeActeurs* ancre=creerListe(20);
     ajoutActeur(ancre,500,300,1);
     ajoutActeur(ancre,400,200,1);
-    ajoutIntervenant(ancre,0,0,1);
+
 
 
 
@@ -32,10 +32,14 @@ int main()
     while (!key[KEY_ESC])
     {
        testMort(ancre);
+       deplacementPersonnage(ancre);
+       deplacementIntervenant(ancre);
+       tirPersonnage(ancre);
+
         affiche(ancre);
 
                 // petite temporisation
-        rest(10);
+        rest(30);
     }
 
 
