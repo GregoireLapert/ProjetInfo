@@ -13,8 +13,8 @@ t_acteur* constructeurActeur(int x,int y,int typ)
     switch(nouveau->type)
     {
     case 1:
-        nouveau->depx=0;
-        nouveau->depy=0;
+        nouveau->depx=15;
+        nouveau->depy=15;
         nouveau->hp=10;
         nouveau->sp=100.0;
         nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
@@ -23,8 +23,8 @@ t_acteur* constructeurActeur(int x,int y,int typ)
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,nouveau->id);
         break;
     case 2:
-        nouveau->depx=0;
-        nouveau->depy=0;
+        nouveau->depx=5;
+        nouveau->depy=5;
         nouveau->hp=10;
         nouveau->sp=100.0;
         nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
@@ -46,17 +46,17 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
     nouveau->etat=1;
     switch(nouveau->type)
     {
-    case 1:
-        nouveau->depx=0;
+    case 1://laser de base
+        nouveau->depx=10;
         nouveau->depy=0;
-        nouveau->tx=100;
-        nouveau->ty=100;
+        nouveau->tx=20;
+        nouveau->ty=10;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
         nouveau->degat=0;
         break;
-   case 2:
-        nouveau->depx=0;
-        nouveau->depy=0;
+   case 2://missile
+        nouveau->depx=5;
+        nouveau->depy=5;
         nouveau->tx=100;
         nouveau->ty=100;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
@@ -88,6 +88,8 @@ t_listeActeurs* creerListe(int maxi)
 
 void ajoutActeur(t_listeActeurs* ancre,int x,int y,int typ)
 {
+    if(ancre->nActeur<ancre->maxiActeur)
+    {
     int i=0;
     while(ancre->tabActeur[i]!=NULL&&i<ancre->maxiActeur)
     {
@@ -95,10 +97,14 @@ void ajoutActeur(t_listeActeurs* ancre,int x,int y,int typ)
     }
     ancre->tabActeur[i]=constructeurActeur(x,y,typ);
     ancre->nActeur+=1;
+    }
+
 }
 
 void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ)
 {
+    if(ancre->nInter<ancre->maxiInter)
+    {
     int i=0;
     while(ancre->tabInter[i]!=NULL&&i<ancre->maxiInter)
     {
@@ -106,6 +112,9 @@ void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ)
     }
     ancre->tabInter[i]=constructeurIntervenant(x,y,typ);
     ancre->nInter+=1;
+
+    }
+
 }
 
 void testMort(t_listeActeurs* ancre)
@@ -128,13 +137,30 @@ void testMort(t_listeActeurs* ancre)
     {
         if(ancre->tabInter[i]!=NULL)
         {
-             if(ancre->tabInter[i]->etat==0)
+             if(ancre->tabInter[i]->etat==0||ancre->tabInter[i]->posx>SCREEN_W)
         {
             free(ancre->tabInter[i]);
             ancre->tabInter[i]=NULL;
             ancre->nInter-=1;
         }
         }
+
+    }
+}
+
+void detruireInter(t_listeActeurs* ancre)
+{
+    int i=0;
+     for(i=0;i<ancre->maxiInter;i++)
+    {
+        if(ancre->tabInter[i]!=NULL)
+        {
+             free(ancre->tabInter[i]);
+            ancre->tabInter[i]=NULL;
+            ancre->nInter-=1;
+        }
+
+
 
     }
 }

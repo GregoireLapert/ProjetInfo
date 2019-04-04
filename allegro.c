@@ -20,7 +20,7 @@ void affiche(t_listeActeurs* ancre)
 
          if(ancre->tabActeur[i]!=NULL)
          {
-            blit(ancre->tabActeur[i]->affiche,buffer,0,0,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy,ancre->tabActeur[i]->tx,ancre->tabActeur[i]->ty);
+            masked_blit(ancre->tabActeur[i]->affiche,buffer,0,0,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy,ancre->tabActeur[i]->tx,ancre->tabActeur[i]->ty);
          }
     }
     for(i=0;i<ancre->maxiInter;i++)
@@ -28,7 +28,7 @@ void affiche(t_listeActeurs* ancre)
 
          if(ancre->tabInter[i]!=NULL)
          {
-            blit(ancre->tabInter[i]->affiche,buffer,0,0,ancre->tabInter[i]->posx,ancre->tabInter[i]->posy,ancre->tabInter[i]->tx,ancre->tabInter[i]->ty);
+            masked_blit(ancre->tabInter[i]->affiche,buffer,0,0,ancre->tabInter[i]->posx,ancre->tabInter[i]->posy,ancre->tabInter[i]->tx,ancre->tabInter[i]->ty);
          }
     }
     blit(buffer,screen,0,0,0,0,screen->w,screen->h);

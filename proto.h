@@ -29,7 +29,7 @@ int depy;
 int degat;
 int tx;//taille =>facilite collision
 int ty;
-int type
+int type;
 }t_intervenant;
 
 typedef struct listeActeurs
@@ -51,6 +51,7 @@ typedef struct listeActeurs
 
 } t_listeActeurs;
 
+
 ////liste de fonctions////
 
 ////allegro/////
@@ -64,4 +65,9 @@ void testMort(t_listeActeurs* ancre);//test si etat=0 donc tue
 void ajoutActeur(t_listeActeurs* ancre,int x,int y,int typ);//test si peut ajouter acteur et ajoute
 t_intervenant* constructeurIntervenant(int x,int y,int typ);//creer objet intervenant
 void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ);//test et ajoute intervenant
+void detruireInter(t_listeActeurs* ancre);//permet de detruire tout les inter car bug
+/////action////
+void deplacementPersonnage(t_listeActeurs* ancre);
+void tirPersonnage(t_listeActeurs* ancre);
+void deplacementIntervenant(t_listeActeurs* ancre);
 #endif // PROTO_H_INCLUDED
