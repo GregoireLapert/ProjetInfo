@@ -9,11 +9,21 @@ BITMAP* objet(int tx,int ty,int couleur)
     return obj;
 }
 
-void affiche(t_listeActeurs* ancre)
+void Affichage (int *x,BITMAP*page, BITMAP* screen, t_listeActeurs* ancre)
 {
-
-    BITMAP* buffer=create_bitmap(screen->w,screen->h);
+    BITMAP* buffer=create_bitmap(SCREEN_W,SCREEN_H);
     clear_bitmap(buffer);
+    
+	blit(page,buffer,*x,0,0,0,SCREEN_W,SCREEN_H);	
+	
+		
+	*x=*x+10;
+	
+	if (*x>1600)
+	{
+		*x=0;
+	}	
+	
     int i=0;
     for(i=0;i<ancre->maxiActeur;i++)
     {
@@ -37,6 +47,8 @@ void affiche(t_listeActeurs* ancre)
              }
          }
     }
-    blit(buffer,screen,0,0,0,0,screen->w,screen->h);
+    blit(buffer,screen,0,0,0,0,SCREEN_W,SCREEN_H);
+    	
     free(buffer);
 }
+

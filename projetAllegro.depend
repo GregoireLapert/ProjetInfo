@@ -26,3 +26,30 @@
 	"proto.h"
 	<allegro.h>
 
+1554495475 source:c:\users\bibes\desktop\exo info\projet\projetinfo\projetinfo\acteur.c
+
+1554495475 source:c:\users\bibes\desktop\exo info\projet\projetinfo\projetinfo\action.c
+	"proto.h"
+	<allegro.h>
+
+1554501373 c:\users\bibes\desktop\exo info\projet\projetinfo\projetinfo\proto.h
+	<allegro.h>
+
+1554500337 source:c:\users\bibes\desktop\exo info\projet\projetinfo\projetinfo\allegro.c
+	"proto.h"
+	<allegro.h>
+
+1554495475 source:c:\users\bibes\desktop\exo info\projet\projetinfo\projetinfo\intervenant.c
+	<allegro.h>
+
+1554500966 source:c:\users\bibes\desktop\exo info\projet\projetinfo\projetinfo\main.c
+	<allegro.h>
+	<time.h>
+	"proto.h"
+
+1554495475 source:c:\users\bibes\desktop\exo info\projet\projetinfo\projetinfo\structure.c
+	<stdlib.h>
+	<stdio.h>
+	"proto.h"
+	<time.h>
+

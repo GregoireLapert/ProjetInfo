@@ -56,7 +56,7 @@ typedef struct listeActeurs
 
 ////allegro/////
 BITMAP* objet(int tx,int ty,int couleur);
-void affiche(t_listeActeurs* ancre);
+
 
 ////structure////
 t_acteur* constructeurActeur(int x,int y,int typ);//crée objet acteur
@@ -70,4 +70,5 @@ void detruireInter(t_listeActeurs* ancre);//permet de detruire tout les inter ca
 void deplacementPersonnage(t_listeActeurs* ancre);
 void tirPersonnage(t_listeActeurs* ancre);
 void deplacementIntervenant(t_listeActeurs* ancre);
+void Affichage (int *x,BITMAP*page, BITMAP* screen, t_listeActeurs* ancre);
 #endif // PROTO_H_INCLUDED
