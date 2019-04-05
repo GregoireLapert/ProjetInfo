@@ -12,24 +12,24 @@ t_acteur* constructeurActeur(int x,int y,int typ)
     nouveau->etat=1;
     switch(nouveau->type)
     {
-    case 1:
-        nouveau->depx=15;
-        nouveau->depy=15;
+    case 1://gentil
+        nouveau->depx=10;
+        nouveau->depy=10;
         nouveau->hp=10;
         nouveau->sp=100.0;
         nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
-        nouveau->tx=100;
-        nouveau->ty=100;
+        nouveau->tx=50;
+        nouveau->ty=50;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,nouveau->id);
         break;
-    case 2:
+    case 2://méchant 1
         nouveau->depx=5;
         nouveau->depy=5;
         nouveau->hp=10;
         nouveau->sp=100.0;
         nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
-        nouveau->tx=100;
-        nouveau->ty=100;
+        nouveau->tx=20;
+        nouveau->ty=20;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,nouveau->id);
         break;
     }
@@ -49,10 +49,10 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
     case 1://laser de base
         nouveau->depx=10;
         nouveau->depy=0;
-        nouveau->tx=20;
-        nouveau->ty=10;
+        nouveau->tx=5;
+        nouveau->ty=2;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
-        nouveau->degat=0;
+        nouveau->degat=10;
         break;
    case 2://missile
         nouveau->depx=5;
@@ -60,7 +60,7 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->tx=100;
         nouveau->ty=100;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
-        nouveau->degat=0;
+        nouveau->degat=20;
         break;
     }
     return nouveau;
@@ -76,7 +76,7 @@ t_listeActeurs* creerListe(int maxi)
     nouveau->tabActeur=(t_acteur**)malloc(maxi*sizeof(t_acteur*));
     nouveau->tabInter=(t_intervenant**)malloc(maxi*sizeof(t_intervenant*));
     int i=0;
-    for(i=0;i<maxi;i++)
+    for(i=0;i<maxi;i++)// initialisation a null pour parcours tableau
     {
         nouveau->tabActeur[i]=NULL;
         nouveau->tabInter[i]=NULL;
@@ -125,11 +125,11 @@ void testMort(t_listeActeurs* ancre)
         if(ancre->tabActeur[i]!=NULL)
         {
              if(ancre->tabActeur[i]->etat==0)
-        {
+            {
             free(ancre->tabActeur[i]);
             ancre->tabActeur[i]=NULL;
             ancre->nActeur-=1;
-        }
+            }
         }
 
     }
@@ -137,7 +137,7 @@ void testMort(t_listeActeurs* ancre)
     {
         if(ancre->tabInter[i]!=NULL)
         {
-             if(ancre->tabInter[i]->etat==0||ancre->tabInter[i]->posx>SCREEN_W)
+        if(ancre->tabInter[i]->etat==0||ancre->tabInter[i]->posx>SCREEN_W)
         {
             free(ancre->tabInter[i]);
             ancre->tabInter[i]=NULL;
