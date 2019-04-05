@@ -21,8 +21,6 @@ int main()
         exit(EXIT_FAILURE);
     }
     t_listeActeurs* ancre=creerListe(20);
-    ajoutActeur(ancre,500,300,1);
-    ajoutActeur(ancre,400,200,1);
 
 
 

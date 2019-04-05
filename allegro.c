@@ -3,7 +3,7 @@
 
 BITMAP* objet(int tx,int ty,int couleur)
 {
-    BITMAP* obj=create_bitmap(ty,tx);
+    BITMAP* obj=create_bitmap(tx,ty);
     clear_bitmap(obj);
     rectfill(obj,0,0,tx,ty,couleur);
     return obj;
@@ -20,7 +20,10 @@ void affiche(t_listeActeurs* ancre)
 
          if(ancre->tabActeur[i]!=NULL)
          {
-            masked_blit(ancre->tabActeur[i]->affiche,buffer,0,0,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy,ancre->tabActeur[i]->tx,ancre->tabActeur[i]->ty);
+             if(ancre->tabActeur[i]->etat!=0)
+             {
+                masked_blit(ancre->tabActeur[i]->affiche,buffer,0,0,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy,ancre->tabActeur[i]->tx,ancre->tabActeur[i]->ty);
+             }
          }
     }
     for(i=0;i<ancre->maxiInter;i++)
@@ -28,8 +31,12 @@ void affiche(t_listeActeurs* ancre)
 
          if(ancre->tabInter[i]!=NULL)
          {
-            masked_blit(ancre->tabInter[i]->affiche,buffer,0,0,ancre->tabInter[i]->posx,ancre->tabInter[i]->posy,ancre->tabInter[i]->tx,ancre->tabInter[i]->ty);
+             if(ancre->tabInter[i]->etat!=0)
+             {
+                masked_blit(ancre->tabInter[i]->affiche,buffer,0,0,ancre->tabInter[i]->posx,ancre->tabInter[i]->posy,ancre->tabInter[i]->tx,ancre->tabInter[i]->ty);
+             }
          }
     }
     blit(buffer,screen,0,0,0,0,screen->w,screen->h);
+    free(buffer);
 }
