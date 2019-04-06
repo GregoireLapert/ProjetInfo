@@ -55,7 +55,9 @@ typedef struct listeActeurs
 ////liste de fonctions////
 
 ////allegro/////
-BITMAP* objet(int tx,int ty,int couleur);
+BITMAP* objet(int tx,int ty,int couleur, int type);
+BITMAP* ActeursG(int tx,int ty ); //Acteurs gentils
+BITMAP* ActeursM(int tx,int ty );// acteurs mechants
 
 
 ////structure////

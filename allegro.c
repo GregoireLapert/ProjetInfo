@@ -1,12 +1,42 @@
 #include "proto.h"
 #include <allegro.h>
 
-BITMAP* objet(int tx,int ty,int couleur)
+BITMAP* objet(int tx,int ty,int couleur, int type)
 {
+	
     BITMAP* obj=create_bitmap(tx,ty);
-    clear_bitmap(obj);
-    rectfill(obj,0,0,tx,ty,couleur);
+				clear_bitmap(obj); 
+    
+    switch (type)
+    {
+    	case 1 :
+				rectfill(obj,0,0,tx,ty,couleur);
+			break;
+				
+		case 2:
+				rectfill(obj,0,0,tx,ty,couleur);
+			break;
+    }
+    
+    
     return obj;
+}
+BITMAP* ActeursG(int tx,int ty )
+{
+    BITMAP* sprite=load_bitmap("vaisseau.bmp",NULL);
+    draw_sprite(screen, sprite, tx, ty);
+    
+    
+    return sprite;
+}
+
+BITMAP* ActeursM(int tx,int ty )
+{
+    BITMAP* sprite=load_bitmap("images/spaceship.bmp",NULL);
+    draw_sprite(screen, sprite, tx, ty);
+    
+    
+    return sprite;
 }
 
 void Affichage (int *x,BITMAP*page, BITMAP* screen, t_listeActeurs* ancre)

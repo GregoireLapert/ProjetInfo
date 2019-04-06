@@ -23,7 +23,7 @@ int main()
         allegro_exit();
         exit(EXIT_FAILURE);
     }
-    t_listeActeurs* ancre=creerListe(20);
+    t_listeActeurs* ancre=creerListe(80);
     
     
     

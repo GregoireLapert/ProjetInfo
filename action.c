@@ -51,7 +51,13 @@ void tirPersonnage(t_listeActeurs* ancre)
         if(key[KEY_SPACE])
     {
         ajoutIntervenant(ancre,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2,1);//rajouter des types pour d'autres missiles
+        
+   
        /** ancre->tabActeur[0]->sp-=1; en attente de fonction de régen de sp**/
+    }
+    if (key[KEY_W])
+    {
+        ajoutIntervenant(ancre,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2,2);//rajouter des types pour d'autres missiles
     }
     }
 }
