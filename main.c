@@ -1,20 +1,16 @@
-
 #include <allegro.h>
 #include <time.h>
 #include "proto.h"
 
-
-
 int main()
 {
-    int x=0;
-
-    // Il y aura du hasard
     srand(time(NULL));
 
-    // Lancer allegro et le mode graphique
+    /// Lancer allegro et le mode graphique
     allegro_init();
     install_keyboard();
+    install_mouse();
+    install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT,NULL);
 
     set_color_depth(desktop_color_depth());
     if (set_gfx_mode(GFX_AUTODETECT_WINDOWED,800,600,0,0)!=0)
@@ -23,51 +19,44 @@ int main()
         allegro_exit();
         exit(EXIT_FAILURE);
     }
-    t_listeActeurs* ancre=creerListe(80);
-    
-    
-    
-    BITMAP *page=NULL;
-    page=load_bitmap("back1.bmp",NULL);
-      if (!page)
+
+    SAMPLE*music=load_sample("music.wav");
+
+    if(!music)
     {
-        allegro_message("pas pu trouver/charger back.bmp");
+        allegro_message("N'a pas pu trouver music.wav");
         allegro_exit();
         exit(EXIT_FAILURE);
     }
-     BITMAP* buffer1=NULL;
-    buffer1=create_bitmap(SCREEN_W,SCREEN_H);
-       if (!buffer1)
+
+    /********** Mettre ce ligne si tester sans musique **********/
+    play_sample(music,20,128,1000,10);
+    /************************************************************/
+
+    show_mouse(screen);
+    int fin,choix;
+
+    while(fin!=1)
     {
-        allegro_message("pas pu trouver/charger back.bmp");
-        allegro_exit();
-        exit(EXIT_FAILURE);
+        /********** Mettre tout en commentaire sauf "jeu()" si tester sans menu **********/
+
+        ///Menu principal
+        if(choix!=4)
+            MenuPrincipal(&choix);
+        if(choix==1)
+            MenuJouer(&choix);
+        else if(choix==3)
+            fin=1;
+        ///Jeu
+        else if(choix==4)
+        {
+            jeu();
+            choix=-1;
+        }
     }
-    
 
+    destroy_sample(music);
 
-
-
-
-    // BOUCLE DE JEU
-    while (!key[KEY_ESC])
-    {
-
-       testMort(ancre);
-       deplacementPersonnage(ancre);
-       deplacementIntervenant(ancre);
-       tirPersonnage(ancre);
-       Affichage(&x,page, screen, ancre);   
-        
-        
-        
-     
-    // petite temporisation
-        rest(30);
-    }
-     
-
-    free(ancre);
     return 0;
 }
 END_OF_MAIN();

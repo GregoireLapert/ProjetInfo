@@ -73,4 +73,5 @@ void deplacementPersonnage(t_listeActeurs* ancre);
 void tirPersonnage(t_listeActeurs* ancre);
 void deplacementIntervenant(t_listeActeurs* ancre);
 void Affichage (int *x,BITMAP*page, BITMAP* screen, t_listeActeurs* ancre);
+void jeu();
 #endif // PROTO_H_INCLUDED
