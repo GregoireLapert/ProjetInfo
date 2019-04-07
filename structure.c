@@ -107,18 +107,15 @@ void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ)
 {
     if(ancre->nInter < ancre->maxiInter)
     {
-    int i=0;
-    while(ancre->tabInter[i]!=NULL&&i<ancre->maxiInter)
-    {
-        i+=1;
-    }
-    ancre->tabInter[i]=constructeurIntervenant(x,y,typ);
-    ancre->nInter+=1;
+        int i=0;
 
+        while(ancre->tabInter[i]!=NULL&&i<ancre->maxiInter)
+        {
+            i+=1;
+        }
+        ancre->tabInter[i]=constructeurIntervenant(x,y,typ);
+        ancre->nInter+=1;
     }
-    
-  
-
 }
 
 void testMort(t_listeActeurs* ancre)
@@ -142,11 +139,11 @@ void testMort(t_listeActeurs* ancre)
         if(ancre->tabInter[i]!=NULL)
         {
         if(ancre->tabInter[i]->etat==0||ancre->tabInter[i]->posx>SCREEN_W)
-        {
-            free(ancre->tabInter[i]);
-            ancre->tabInter[i]=NULL;
-            ancre->nInter-=1;
-        }
+            {
+                free(ancre->tabInter[i]);
+                ancre->tabInter[i]=NULL;
+                ancre->nInter-=1;
+            }
         }
 
     }
@@ -163,8 +160,5 @@ void detruireInter(t_listeActeurs* ancre)
             ancre->tabInter[i]=NULL;
             ancre->nInter-=1;
         }
-
-
-
     }
 }

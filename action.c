@@ -3,8 +3,6 @@
 
 void deplacementPersonnage(t_listeActeurs* ancre)
 {
-
-
     t_acteur* joueur=ancre->tabActeur[0];
       if (key[KEY_LEFT]){
         joueur->posx -= joueur->depx;
@@ -12,7 +10,6 @@ void deplacementPersonnage(t_listeActeurs* ancre)
         {
             joueur->posx=0;
         }
-
     }
 
     if (key[KEY_RIGHT]){
@@ -49,16 +46,16 @@ void tirPersonnage(t_listeActeurs* ancre)
     if(ancre->tabActeur[0]->sp>0)
     {
         if(key[KEY_SPACE])
-    {
-        ajoutIntervenant(ancre,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2,1);//rajouter des types pour d'autres missiles
+        {
+            ajoutIntervenant(ancre,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2,1);//rajouter des types pour d'autres missiles
 
 
-       /** ancre->tabActeur[0]->sp-=1; en attente de fonction de régen de sp**/
-    }
-    if (key[KEY_W])
-    {
-        ajoutIntervenant(ancre,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2,2);//rajouter des types pour d'autres missiles
-    }
+           /** ancre->tabActeur[0]->sp-=1; en attente de fonction de régen de sp**/
+        }
+        if (key[KEY_W])
+        {
+            ajoutIntervenant(ancre,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2,2);//rajouter des types pour d'autres missiles
+        }
     }
 }
 
@@ -79,13 +76,22 @@ void tirPersonnage(t_listeActeurs* ancre)
 
 void deplacementIntervenant(t_listeActeurs* ancre)
 {
-    int i=0;
-    for(i=0;i<ancre->nInter;i++)
+    int i=0,compteur=0;
+
+    for(i=compteur;i<ancre->nInter+compteur;i++)
     {
         if(ancre->tabInter[i]!=NULL)
         {
             ancre->tabInter[i]->posx+=ancre->tabInter[i]->depx;
-            ancre->tabInter[i]->posy+= ancre->tabInter[i]->depy;
+            ancre->tabInter[i]->posy+=ancre->tabInter[i]->depy;
+        }
+        else
+        {
+            if(i==compteur+ancre->nInter)
+                compteur=0;
+            else{
+                    compteur++;
+            }
         }
     }
 }

@@ -53,38 +53,38 @@
 	"proto.h"
 	<time.h>
 
-1554597100 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\acteur.c
+1554601330 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\acteur.c
 
-1554597100 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\allegro.c
+1554602488 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\allegro.c
 	"proto.h"
 	<allegro.h>
 
-1554597596 c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\proto.h
+1554602488 c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\proto.h
 	<allegro.h>
 
-1554597101 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\intervenant.c
+1554601331 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\intervenant.c
 	<allegro.h>
 
-1554599561 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\main.c
+1554653629 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\main.c
 	<allegro.h>
 	<time.h>
 	"proto.h"
 
-1554597101 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\structure.c
+1554650364 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\structure.c
 	<stdlib.h>
 	<stdio.h>
 	"proto.h"
 	<time.h>
 
-1554597731 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\action.c
+1554653419 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\action.c
 	"proto.h"
 	<allegro.h>
 
-1554600185 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\jeu.c
+1554602488 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\jeu.c
 	"proto.h"
 	<allegro.h>
 
-1554600590 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\menuprincipal.c
+1554602488 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projetinfo\menuprincipal.c
 	"proto.h"
 	<allegro.h>
 
