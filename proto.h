@@ -1,6 +1,13 @@
 #ifndef PROTO_H_INCLUDED
 #define PROTO_H_INCLUDED
 #include <allegro.h>
+// creation structure pour décor
+typedef struct decor
+{
+    BITMAP* affiche;//bitmap afficher sur screen
+    int posx;
+    int posy;
+}t_decor;
 //acteur= tout PJ ou PNJ primaire ennemi, gentil
 typedef struct acteur{
 int posx;
@@ -48,6 +55,9 @@ typedef struct listeActeurs
     int maxiInter;
     int nInter;
     t_intervenant **tabInter;
+    //////décor//////
+    BITMAP *decor[15];
+    t_decor *tabDecor[510]
 
 } t_listeActeurs;
 
@@ -72,6 +82,14 @@ void detruireInter(t_listeActeurs* ancre);//permet de detruire tout les inter ca
 void deplacementPersonnage(t_listeActeurs* ancre);
 void tirPersonnage(t_listeActeurs* ancre);
 void deplacementIntervenant(t_listeActeurs* ancre);
-void Affichage (int *x,BITMAP*page, BITMAP* screen, t_listeActeurs* ancre);
+
 void jeu();
+//en cour de travaille//
+void recupBitmapDecor(t_listeActeurs *ancre);
+int fibonnaci(int u);
+BITMAP* fondDecor(t_listeActeurs *ancre,BITMAP* ancienFond);
+void generateurDecor(t_listeActeurs *ancre);
+BITMAP *fondBuffer(t_listeActeurs* ancre,BITMAP* ancienFond);
+void creerDecor(t_listeActeurs* ancre,BITMAP* fond,BITMAP* buffer);
+void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre);
 #endif // PROTO_H_INCLUDED
