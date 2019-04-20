@@ -3,12 +3,17 @@
 
 void jeu()
 {
-    int x=0,retour=0;
+    int xPage=0,retour=0,xFond=0;
     t_listeActeurs* ancre=creerListe(80);
-
-    BITMAP *page=NULL;
+    //déclaration des bitmap a utiliser//
+    BITMAP *page=NULL;//scroll du fond
     page=load_bitmap("back1.bmp",NULL);
-
+    clear_bitmap(screen);
+    //fond = bitmap de 10k pixel de long de décor
+    BITMAP* fond=fondDecor(ancre,screen);
+    //fond de 10 k pixel de buffer
+    BITMAP* bufferColi=fondBuffer(ancre,screen);
+    BITMAP* screenBuffer=create_bitmap(800,600);//buffer de screen
     if (!page)
     {
         allegro_message("pas pu trouver/charger back.bmp");
@@ -33,7 +38,8 @@ void jeu()
         deplacementPersonnage(ancre);
         deplacementIntervenant(ancre);
         tirPersonnage(ancre);
-        Affichage(&x,page, screen, ancre);
+        Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
+
 
         if(key[KEY_P])
         {
@@ -57,3 +63,17 @@ void jeu()
 
     free(ancre);
 }
+/*
+int fibonnaci(int u)
+{
+    int i=0;
+    int c=u;
+    for(i=0;i<c;i++)
+    {
+        u+=u+1;
+    }
+    return u;
+}*/
+
+
+

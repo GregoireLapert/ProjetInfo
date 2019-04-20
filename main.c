@@ -35,9 +35,16 @@ int main()
 
     show_mouse(screen);
     int fin,choix;
+    t_listeActeurs* ancre=creerListe(80);//
+    recupBitmapDecor(ancre);
+
+
+
+
 
     while(fin!=1)
     {
+
         /********** Mettre tout en commentaire sauf "jeu()" si tester sans menu **********/
 
         ///Menu principal
@@ -53,6 +60,7 @@ int main()
             jeu();
             choix=-1;
         }
+
     }
 
     destroy_sample(music);
