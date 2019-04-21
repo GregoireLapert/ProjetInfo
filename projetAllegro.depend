@@ -96,3 +96,45 @@
 	"proto.h"
 	<allegro.h>
 
+1555854596 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\acteur.c
+	"proto.h"
+
+1555854549 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\action.c
+	"proto.h"
+	<allegro.h>
+
+1555854886 c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\proto.h
+	<allegro.h>
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+
+1555854612 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\intervenant.c
+	"proto.h"
+
+1555780573 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\menuprincipal.c
+	"proto.h"
+	<allegro.h>
+
+1555852070 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\allegro.c
+	"proto.h"
+	<allegro.h>
+
+1555853869 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\jeu.c
+	"proto.h"
+	<allegro.h>
+
+1555848837 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\main.c
+	<allegro.h>
+	<time.h>
+	"proto.h"
+
+1555854418 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\structure.c
+	"proto.h"
+
+1555850348 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\decors.c
+	"proto.h"
+
+1555854489 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\ennemis.c
+	"proto.h"
+

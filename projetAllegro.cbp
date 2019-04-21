@@ -46,6 +46,12 @@
 		<Unit filename="allegro.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="decors.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ennemis.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="intervenant.c">
 			<Option compilerVar="CC" />
 		</Unit>

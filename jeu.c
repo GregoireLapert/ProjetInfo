@@ -5,15 +5,15 @@ void jeu()
 {
     int xPage=0,retour=0,xFond=0;
     t_listeActeurs* ancre=creerListe(80);
-    //déclaration des bitmap a utiliser//
-    BITMAP *page=NULL;//scroll du fond
+
+    ///Déclaration des bitmap a utiliser
+    BITMAP *page=NULL;      ///scroll du fond
     page=load_bitmap("back1.bmp",NULL);
     clear_bitmap(screen);
-    //fond = bitmap de 10k pixel de long de décor
-    BITMAP* fond=fondDecor(ancre,screen);
-    //fond de 10 k pixel de buffer
-    BITMAP* bufferColi=fondBuffer(ancre,screen);
-    BITMAP* screenBuffer=create_bitmap(800,600);//buffer de screen
+    BITMAP* fond=fondDecor(ancre,screen);   ///fond = bitmap de 10k pixel de long de décor
+    BITMAP* bufferColi=fondBuffer(ancre,screen);    ///fond de 10 k pixel de buffer
+    BITMAP* screenBuffer=create_bitmap(800,600);    ///buffer de screen
+
     if (!page)
     {
         allegro_message("pas pu trouver/charger back.bmp");
@@ -21,27 +21,35 @@ void jeu()
         exit(EXIT_FAILURE);
     }
 
-    BITMAP* buffer1=NULL;
-    buffer1=create_bitmap(SCREEN_W,SCREEN_H);
 
-    if (!buffer1)
+                            /***** BOUCLE DE JEU *****/
+    while (retour!=1)
     {
-        allegro_message("pas pu trouver/charger back.bmp");
-        allegro_exit();
-        exit(EXIT_FAILURE);
-    }
+        int place=1, yes=0, creerE;
 
-    // BOUCLE DE JEU
-    while (retour==0)
-    {
+        ///Affichage aleatoire d'ennemis
+        while(yes==0)
+        {
+            if(ancre->tabActeur[place]!=NULL)
+                place++;
+            else
+            {
+                creerE=rand()%20;
+                if(creerE==1)
+                    ancre->tabActeur[place]=constructeurActeur(800,rand()%600,2);
+                yes=1;
+            }
+        }
+
         testMort(ancre);
         deplacementPersonnage(ancre);
+        deplacementEnnemi(ancre);
         deplacementIntervenant(ancre);
         tirPersonnage(ancre);
         Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
 
 
-        if(key[KEY_P])
+        if(key[KEY_P] || key[KEY_ESC])
         {
             rectfill(screen,SCREEN_W/2-200,SCREEN_H/2-50,SCREEN_W/2+200,SCREEN_H/2+50,makecol(255,255,255));
             textprintf_centre_ex(screen,font,SCREEN_W/2,SCREEN_H/2-30,makecol(0,0,0),-1,"PAUSE");
@@ -63,17 +71,3 @@ void jeu()
 
     free(ancre);
 }
-/*
-int fibonnaci(int u)
-{
-    int i=0;
-    int c=u;
-    for(i=0;i<c;i++)
-    {
-        u+=u+1;
-    }
-    return u;
-}*/
-
-
-

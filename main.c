@@ -35,12 +35,6 @@ int main()
 
     show_mouse(screen);
     int fin,choix;
-    t_listeActeurs* ancre=creerListe(80);//
-    recupBitmapDecor(ancre);
-
-
-
-
 
     while(fin!=1)
     {
