@@ -21,9 +21,9 @@ t_acteur* constructeurActeur(int x,int y,int typ)
 
             break;
 
-        case 2:     ///méchant 1
+        case 2:     ///Ennemi 1 : Asteroides
             nouveau->depx=5;
-            nouveau->depy=5;
+            nouveau->depy=2;
             nouveau->hp=10;
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
@@ -32,6 +32,29 @@ t_acteur* constructeurActeur(int x,int y,int typ)
         }
         nouveau->tx=nouveau->affiche->w;
         nouveau->ty=nouveau->affiche->h;
+
+        case 3:     ///Ennemi 2 : Vaisseau
+            nouveau->depx=5;
+            nouveau->depy=0;
+            nouveau->hp=10;
+            nouveau->sp=100.0;
+            nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
+            nouveau->affiche = load_bitmap("ennemi.bmp",NULL);
+            nouveau->tx=nouveau->affiche->w;
+            nouveau->ty=nouveau->affiche->h;
+            break;
+
+        case 4:     ///Ennemi 3 : Tourelle
+            nouveau->depx=3;
+            nouveau->depy=0;
+            nouveau->hp=5;
+            nouveau->sp=100.0;
+            nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
+            nouveau->affiche = load_bitmap("ennemi.bmp",NULL);
+            nouveau->tx=nouveau->affiche->w;
+            nouveau->ty=nouveau->affiche->h;
+            break;
+    }
 
     return nouveau;
 }
@@ -95,7 +118,7 @@ void deplacementPersonnage(t_listeActeurs* ancre)
 
 void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre)
 {
-        //collision décor en +- x si couleur différente de magenta alors rebondi
+        //collision dï¿½cor en +- x si couleur diffï¿½rente de magenta alors rebondi
 
 
 
@@ -135,7 +158,7 @@ void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre)
 
             }
            //fin pts du bas
-        //debut du millieu coté
+        //debut du millieu cotï¿½
     if(getpixel(fond,x+ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=16711935)
             {
                ancre->tabActeur[0]->posx+=ancre->tabActeur[0]->depx;

@@ -5,7 +5,7 @@ t_listeActeurs* creerListe(int maxi)
 {
     int i=0;
     t_listeActeurs* nouveau=(t_listeActeurs*)malloc(sizeof(t_listeActeurs));
-    nouveau->maxiActeur=maxi;
+    nouveau->maxiActeur=10;
     nouveau->maxiInter=maxi;
     nouveau->nActeur=0;
     nouveau->nInter=0;
@@ -35,7 +35,7 @@ void testMort(t_listeActeurs* ancre)
     {
         if(ancre->tabActeur[i]!=NULL)
         {
-            if(ancre->tabActeur[i]->etat==0)
+            if(ancre->tabActeur[i]->etat==0 || ancre->tabActeur[i]->posx + ancre->tabActeur[i]->tx<0)
             {
                 free(ancre->tabActeur[i]);
                 ancre->tabActeur[i]=NULL;

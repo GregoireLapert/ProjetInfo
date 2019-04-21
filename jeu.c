@@ -25,20 +25,13 @@ void jeu()
                             /***** BOUCLE DE JEU *****/
     while (retour!=1)
     {
-        int place=1, yes=0, creerE;
+        int place=0, yes=0;
 
         ///Affichage aleatoire d'ennemis
         while(yes==0)
         {
-            if(ancre->tabActeur[place]!=NULL)
-                place++;
-            else
-            {
-                creerE=rand()%20;
-                if(creerE==1)
-                    ancre->tabActeur[place]=constructeurActeur(800,rand()%600,2);
-                yes=1;
-            }
+            place++;
+            yes=PopEnnemis(ancre,place);
         }
 
         testMort(ancre);
