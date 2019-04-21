@@ -42,7 +42,7 @@ void jeu()
         }
 
         testMort(ancre);
-        deplacementPersonnage(ancre);
+        deplacementPersonnage(ancre,bufferColi);
         deplacementEnnemi(ancre);
         deplacementIntervenant(ancre);
         tirPersonnage(ancre);

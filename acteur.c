@@ -54,21 +54,45 @@ void ajoutActeur(t_listeActeurs* ancre,int x,int y,int typ)
 }
 
 ///Deplace le personnage jouable selon la touche appuyee
-void deplacementPersonnage(t_listeActeurs* ancre)
+void deplacementPersonnage(t_listeActeurs* ancre, BITMAP *bufferColi)
 {
     t_acteur* joueur=ancre->tabActeur[0];
     if(key[KEY_LEFT])
     {
-        joueur->posx -= joueur->depx;
+        if (getpixel(bufferColi,joueur->posx,joueur->posy)!= makecol(255,0,255) ) 
+        {
+           if (getpixel(bufferColi,joueur->posx,joueur->posy + joueur->ty/2)!= makecol(255,0,255) )  
+            {
+                if (getpixel(bufferColi,joueur->posx,joueur->posy + joueur->ty)!= makecol(255,0,255) )  
+                {
+                    joueur->posx -= joueur->depx;
+                }
+                
+            }
+            
+        }
+        
         if (joueur->posx<0)
         {
+          
             joueur->posx=0;
         }
     }
 
     if(key[KEY_RIGHT])
     {
-        joueur->posx += joueur->depx;
+        if (getpixel(bufferColi,joueur->posx+ joueur->tx ,joueur->posy )!= makecol(255,0,255) ) 
+        {
+            if (getpixel(bufferColi,joueur->posx+ joueur->tx ,joueur->posy+ joueur->ty/2 )!= makecol(255,0,255) ) 
+            {
+                if (getpixel(bufferColi,joueur->posx+ joueur->tx ,joueur->posy+ joueur->ty )!= makecol(255,0,255) ) 
+                {
+                    joueur->posx += joueur->depx;      
+                }
+            }
+          
+        }
+        
         if (joueur->posx+joueur->tx > SCREEN_W)
         {
             joueur->posx=SCREEN_W-joueur->tx;
@@ -77,7 +101,19 @@ void deplacementPersonnage(t_listeActeurs* ancre)
 
     if (key[KEY_UP])
     {
-        joueur->posy -= joueur->depy;
+        if (getpixel(bufferColi,joueur->posx ,joueur->posy )!= makecol(255,0,255) ) 
+        {
+            if (getpixel(bufferColi,joueur->posx + joueur->tx/2 ,joueur->posy)!= makecol(255,0,255) ) 
+            {
+                if (getpixel(bufferColi,joueur->posx + joueur->tx ,joueur->posy )!= makecol(255,0,255) ) 
+                {
+                    joueur->posy -= joueur->depy;    
+                }
+                
+            }
+            
+        }
+        
         if (joueur->posy<0)
         {
             joueur->posy=0;
@@ -86,7 +122,10 @@ void deplacementPersonnage(t_listeActeurs* ancre)
 
     if (key[KEY_DOWN])
     {
-        joueur->posy += joueur->depy;
+        
+        
+        joueur->posy += joueur->depy;   
+        
         if (joueur->posy+joueur->ty > SCREEN_H)
         {
             joueur->posy=SCREEN_H-joueur->ty;

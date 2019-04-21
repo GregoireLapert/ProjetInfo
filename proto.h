@@ -91,7 +91,7 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ);    ///creer objet i
 void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ);   ///test et ajoute intervenant
 void detruireInter(t_listeActeurs* ancre);          ///permet de detruire tout les inter car bug
 /***action***/
-void deplacementPersonnage(t_listeActeurs* ancre);
+void deplacementPersonnage(t_listeActeurs* ancre, BITMAP *bufferColi);
 void tirPersonnage(t_listeActeurs* ancre);
 void deplacementIntervenant(t_listeActeurs* ancre);
 

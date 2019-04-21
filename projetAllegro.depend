@@ -138,3 +138,45 @@
 1555854489 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\ennemis.c
 	"proto.h"
 
+1555848633 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\menuprincipal.c
+	"proto.h"
+	<allegro.h>
+
+1555858889 c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\proto.h
+	<allegro.h>
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+
+1555855266 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\action.c
+	"proto.h"
+	<allegro.h>
+
+1555855266 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\allegro.c
+	"proto.h"
+	<allegro.h>
+
+1555855266 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\decors.c
+	"proto.h"
+
+1555855266 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\ennemis.c
+	"proto.h"
+
+1555855266 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\intervenant.c
+	"proto.h"
+
+1555858899 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\jeu.c
+	"proto.h"
+	<allegro.h>
+
+1555855267 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\main.c
+	<allegro.h>
+	<time.h>
+	"proto.h"
+
+1555855267 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\structure.c
+	"proto.h"
+
+1555861459 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\acteur.c
+	"proto.h"
+
