@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <time.h>
 
-///Creation structure pour décor
+///Creation structure pour dï¿½cor
 typedef struct decor
 {
     BITMAP* affiche;    ///bitmap afficher sur screen
@@ -20,7 +20,7 @@ int posy;
 int depx;
 int depy;
 int hp;         ///pts de vie acteur
-float sp;       ///pts énergie acteur en pourcent
+float sp;       ///pts ï¿½nergie acteur en pourcent
 int id;         ///correspond au makecol du buffer de collision
 int etat;       ///0=mort 1=vie
 BITMAP* affiche;        ///a remplacer par un tableau de bitmap* si animation
@@ -31,7 +31,7 @@ int type;       ///0 pour joueur 1 pour ennemi 1...
 }t_acteur;
 
 
-///tout les élement NJ: missile, bonus...
+///tout les ï¿½lement NJ: missile, bonus...
 typedef struct intervenant{
 BITMAP* affiche;
 BITMAP* collision;
@@ -48,23 +48,23 @@ int type;
 
 typedef struct listeActeurs
 {
-    /// nombre maxi d'éléments = taille du tableau de pointeurs
+    /// nombre maxi d'ï¿½lï¿½ments = taille du tableau de pointeurs
     int maxiActeur;
 
-    ///nombre effectif de pointeurs utilisés
-    ///(les autres sont à NULL)
+    ///nombre effectif de pointeurs utilisï¿½s
+    ///(les autres sont ï¿½ NULL)
     int nActeur;
 
-    /// le tableau de pointeurs (alloué dynamiquement)
+    /// le tableau de pointeurs (allouï¿½ dynamiquement)
     t_acteur **tabActeur;
 
     int maxiInter;
     int nInter;
     t_intervenant **tabInter;
 
-    /***décor***/
+    /***dï¿½cor***/
     BITMAP *decor[15];
-    t_decor *tabDecor[510]
+    t_decor *tabDecor[510];
 
 }t_listeActeurs;
 
@@ -83,13 +83,13 @@ void AffMP();
 void AffMM();
 
 /***Structure***/
-t_acteur* constructeurActeur(int x,int y,int typ);  ///crée objet acteur
-t_listeActeurs* creerListe(int maxi);               ///crée ancre
+t_acteur* constructeurActeur(int x,int y,int typ);  ///crï¿½e objet acteur
+t_listeActeurs* creerListe(int maxi);               ///crï¿½e ancre
 void testMort(t_listeActeurs* ancre);               ///test si etat=0 donc tue
 void ajoutActeur(t_listeActeurs* ancre,int x,int y,int typ);    ///test si peut ajouter acteur et ajoute
 t_intervenant* constructeurIntervenant(int x,int y,int typ);    ///creer objet intervenant
 void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ);   ///test et ajoute intervenant
-void detruireInter(t_listeActeurs* ancre);          ///permet de detruire tout les inter car bug
+
 /***action***/
 void deplacementPersonnage(t_listeActeurs* ancre);
 void tirPersonnage(t_listeActeurs* ancre);
@@ -106,5 +106,6 @@ BITMAP *fondBuffer(t_listeActeurs* ancre,BITMAP* ancienFond);
 void creerDecor(t_listeActeurs* ancre,BITMAP* fond,BITMAP* buffer);
 void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre);
 void deplacementEnnemi(t_listeActeurs* ancre);
+int PopEnnemis(t_listeActeurs* ancre, int place);
 
 #endif // PROTO_H_INCLUDED
