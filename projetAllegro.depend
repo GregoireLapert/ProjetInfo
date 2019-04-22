@@ -1,28 +1,29 @@
 # depslib dependency file v1.0
-1554714545 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\acteur.c
+1555933970 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\acteur.c
+	"proto.h"
 
-1554714545 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\intervenant.c
-	<allegro.h>
+1555855341 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\intervenant.c
+	"proto.h"
 
-1555670673 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\main.c
+1555855341 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\main.c
 	<allegro.h>
 	<time.h>
 	"proto.h"
 
-1555772929 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\allegro.c
+1555934007 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\allegro.c
 	"proto.h"
 	<allegro.h>
 
-1555776408 d:\cour\informatique\projet perso\projet-informatique\projetinfo\proto.h
+1555872420 d:\cour\informatique\projet perso\projet-informatique\projetinfo\proto.h
 	<allegro.h>
-
-1555772929 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\structure.c
 	<stdlib.h>
 	<stdio.h>
-	"proto.h"
 	<time.h>
 
-1554714677 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\action.c
+1555855341 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\structure.c
+	"proto.h"
+
+1555855341 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\action.c
 	"proto.h"
 	<allegro.h>
 
@@ -88,11 +89,11 @@
 	"proto.h"
 	<allegro.h>
 
-1555772575 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\jeu.c
+1555872600 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\jeu.c
 	"proto.h"
 	<allegro.h>
 
-1554714677 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\menuprincipal.c
+1555855179 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\menuprincipal.c
 	"proto.h"
 	<allegro.h>
 
@@ -178,5 +179,11 @@
 	"proto.h"
 
 1555861459 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\acteur.c
+	"proto.h"
+
+1555869792 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\decors.c
+	"proto.h"
+
+1555855341 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\ennemis.c
 	"proto.h"
 
