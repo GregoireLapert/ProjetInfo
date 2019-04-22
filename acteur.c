@@ -29,12 +29,9 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
             nouveau->affiche = load_bitmap("images\\ennemies\\m3.bmp",NULL);
             break;
-        case 3:
 
-            break;
-    }
-    nouveau->tx=nouveau->affiche->w;
-    nouveau->ty=nouveau->affiche->h;
+
+
 
         case 3:     ///Ennemi 2 : Vaisseau
             nouveau->depx=5;
@@ -43,8 +40,7 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
             nouveau->affiche = load_bitmap("ennemi.bmp",NULL);
-            nouveau->tx=nouveau->affiche->w;
-            nouveau->ty=nouveau->affiche->h;
+
             break;
 
         case 4:     ///Ennemi 3 : Tourelle
@@ -54,10 +50,12 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
             nouveau->affiche = load_bitmap("ennemi.bmp",NULL);
-            nouveau->tx=nouveau->affiche->w;
-            nouveau->ty=nouveau->affiche->h;
+
             break;
     }
+
+     nouveau->tx=nouveau->affiche->w;
+    nouveau->ty=nouveau->affiche->h;
 
     return nouveau;
 }
