@@ -4,7 +4,7 @@
 void jeu()
 {
     int xPage=0,retour=0,xFond=0;
-    int boss=0;
+    int boss=0,i;
     t_listeActeurs* ancre=creerListe(80);
 
     ///D�claration des bitmap a utiliser
@@ -37,10 +37,13 @@ void jeu()
         int place=0, yes=0;
 
         ///Affichage aleatoire d'ennemis
-        while(yes==0)
+        if(boss==0)
         {
-            place++;
-            yes=PopEnnemis(ancre,place);
+            while(yes==0)
+            {
+                place++;
+                yes=PopEnnemis(ancre,place);
+            }
         }
 
         testMort(ancre);
@@ -66,7 +69,6 @@ void jeu()
             collisionDecor(fond,xFond,ancre);
             Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
             popBoss(xFond,ancre,&boss,6);
-            TirEnnemie(ancre);
         }
 
 
@@ -92,4 +94,8 @@ void jeu()
 
 
     free(ancre);
+    destroy_bitmap(GameOver);
+    destroy_bitmap(page);
+    for(i=0;i<15;i++)
+        destroy_bitmap(ancre->decor[i]);
 }

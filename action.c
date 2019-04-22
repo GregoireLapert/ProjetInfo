@@ -9,16 +9,14 @@ void tirPersonnage(t_listeActeurs* ancre)
         if(key[KEY_SPACE])
         {
             ajoutIntervenant(ancre,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx,ancre->tabActeur[0]->posy+12+ancre->tabActeur[0]->ty/2,1);    ///Rajouter des types pour d'autres missiles
-
-           /** ancre->tabActeur[0]->sp-=1; en attente de fonction de régen de sp**/
         }
         if (key[KEY_W])
         {
-            ///Un missile coute 20 SP
-            if(ancre->tabActeur[0]->sp>=20)
+            ///Un missile coute 30 SP
+            if(ancre->tabActeur[0]->sp>=30)
             {
                 ajoutIntervenant(ancre,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx,ancre->tabActeur[0]->posy+8+ancre->tabActeur[0]->ty/2,2);    ///Rajouter des types pour d'autres missiles
-                ancre->tabActeur[0]->sp-=20;
+                ancre->tabActeur[0]->sp-=30;
             }
         }
     }

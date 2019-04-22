@@ -74,17 +74,24 @@ void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ)
     }
 }
 
-void TirEnnemie(t_listeActeurs* ancre)
+void TirEnnemi (t_listeActeurs *ancre)
 {
-    int i=0;
-    int a=0;
+    int i,a;
 
-    //recherche et attaque du boss 1
-    for(i=0;i<ancre->maxiActeur;i++)
+    for (i=0;i<ancre->maxiActeur;i++)
     {
         if(ancre->tabActeur[i]!=NULL)
         {
-            if(ancre->tabActeur[i]->type==5)
+            ///Recherche et attaque tourelle
+            if ((ancre->tabActeur[i]->type==4)&& ancre->tabActeur[i]->posx%200<30 && ancre->tabActeur[i]->posx%2==0)
+                ajoutIntervenant(ancre,ancre->tabActeur [i]->posx,ancre->tabActeur [i]->posy+ ancre->tabActeur[i]->ty/2, 6);
+
+            ///Recherche et attaque vaisseau ennemi
+            else if ((ancre->tabActeur[i]->type==3)&& ancre->tabActeur[i]->posx%200<30 && ancre->tabActeur[i]->posx%2==0)
+                ajoutIntervenant(ancre,ancre->tabActeur [i]->posx,ancre->tabActeur [i]->posy+ ancre->tabActeur[i]->ty/2, 5);
+
+            ///Recherche et attaque boss 1
+            else if(ancre->tabActeur[i]->type==5)
             {
                 if(rand()%50==1)
                 {
@@ -95,19 +102,9 @@ void TirEnnemie(t_listeActeurs* ancre)
 
                 }
             }
-        }
-    }
 
-    //recherche et attaque boss 2
-
-
-    for(i=0;i<ancre->maxiActeur;i++)
-    {
-        if(ancre->tabActeur[i]!=NULL)
-        {
-
-
-            if(ancre->tabActeur[i]->type==6)
+            ///Recherche et attaque boss 2
+            else if(ancre->tabActeur[i]->type==6)
             {
                 if(rand()%5==1)
                 {
@@ -118,23 +115,6 @@ void TirEnnemie(t_listeActeurs* ancre)
 
                 }
             }
-        }
-    }
-}
-
-void TirEnnemi (t_listeActeurs *ancre)
-{
-    int i;
-
-    for (i=0;i<ancre->maxiActeur;i++)
-    {
-        if (ancre->tabActeur[i]!=NULL )
-        {
-            if ((ancre->tabActeur[i]->type==4)&& ancre->tabActeur[i]->posx%200<30 && ancre->tabActeur[i]->posx%2==0)
-                ajoutIntervenant(ancre,ancre->tabActeur [i]->posx,ancre->tabActeur [i]->posy+ ancre->tabActeur[i]->ty/2, 6);
-
-            if ((ancre->tabActeur[i]->type==3)&& ancre->tabActeur[i]->posx%200<30 && ancre->tabActeur[i]->posx%2==0)
-                ajoutIntervenant(ancre,ancre->tabActeur [i]->posx,ancre->tabActeur [i]->posy+ ancre->tabActeur[i]->ty/2, 5);
         }
     }
 }
