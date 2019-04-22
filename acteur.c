@@ -27,11 +27,14 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->hp=10;
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
-            nouveau->affiche = load_bitmap("ennemi.bmp",NULL);
+            nouveau->affiche = load_bitmap("images\\ennemies\\m3.bmp",NULL);
             break;
-        }
-        nouveau->tx=nouveau->affiche->w;
-        nouveau->ty=nouveau->affiche->h;
+        case 3:
+
+            break;
+    }
+    nouveau->tx=nouveau->affiche->w;
+    nouveau->ty=nouveau->affiche->h;
 
     return nouveau;
 }

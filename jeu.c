@@ -8,7 +8,7 @@ void jeu()
 
     ///Déclaration des bitmap a utiliser
     BITMAP *page=NULL;      ///scroll du fond
-    page=load_bitmap("back1.bmp",NULL);
+    page=load_bitmap("images\\Decor\\background\\Fond.bmp",NULL);
     clear_bitmap(screen);
     BITMAP* fond=fondDecor(ancre,screen);   ///fond = bitmap de 10k pixel de long de décor
     BITMAP* bufferColi=fondBuffer(ancre,screen);    ///fond de 10 k pixel de buffer
