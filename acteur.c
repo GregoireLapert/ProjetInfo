@@ -119,7 +119,7 @@ void deplacementPersonnage(t_listeActeurs* ancre)
 
 void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre)
 {
-        //collision d�cor en +- x si couleur diff�rente de magenta alors rebondi
+        //collision d�cor en +- x si couleur differente de magenta alors rebondi
 
 
 
