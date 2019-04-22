@@ -1,4 +1,4 @@
-#include "proto.h"
+ #include "proto.h"
 
                 /****** Sous-programmes pour les decors ******/
 

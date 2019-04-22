@@ -42,11 +42,14 @@ void jeu()
         }
 
         testMort(ancre);
-        deplacementPersonnage(ancre,bufferColi);
+        deplacementPersonnage(ancre);
         deplacementEnnemi(ancre);
         deplacementIntervenant(ancre);
         tirPersonnage(ancre);
-        Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
+        collisionDecor(fond,xFond,ancre);
+       Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
+
+
 
 
         if(key[KEY_P] || key[KEY_ESC])

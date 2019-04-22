@@ -17,9 +17,8 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->hp=10;
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);  ///Mettre une couleur fixe
-            nouveau->tx=153;
-            nouveau->ty=90;
             nouveau->affiche = load_bitmap("vaisseau.bmp",NULL);
+
             break;
 
         case 2:     ///méchant 1
@@ -29,10 +28,10 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
             nouveau->affiche = load_bitmap("ennemi.bmp",NULL);
-            nouveau->tx=nouveau->affiche->w;
-            nouveau->ty=nouveau->affiche->h;
             break;
         }
+        nouveau->tx=nouveau->affiche->w;
+        nouveau->ty=nouveau->affiche->h;
 
     return nouveau;
 }
@@ -54,45 +53,21 @@ void ajoutActeur(t_listeActeurs* ancre,int x,int y,int typ)
 }
 
 ///Deplace le personnage jouable selon la touche appuyee
-void deplacementPersonnage(t_listeActeurs* ancre, BITMAP *bufferColi)
+void deplacementPersonnage(t_listeActeurs* ancre)
 {
     t_acteur* joueur=ancre->tabActeur[0];
     if(key[KEY_LEFT])
     {
-        if (getpixel(bufferColi,joueur->posx,joueur->posy)!= makecol(255,0,255) ) 
-        {
-           if (getpixel(bufferColi,joueur->posx,joueur->posy + joueur->ty/2)!= makecol(255,0,255) )  
-            {
-                if (getpixel(bufferColi,joueur->posx,joueur->posy + joueur->ty)!= makecol(255,0,255) )  
-                {
-                    joueur->posx -= joueur->depx;
-                }
-                
-            }
-            
-        }
-        
+        joueur->posx -= joueur->depx;
         if (joueur->posx<0)
         {
-          
             joueur->posx=0;
         }
     }
 
     if(key[KEY_RIGHT])
     {
-        if (getpixel(bufferColi,joueur->posx+ joueur->tx ,joueur->posy )!= makecol(255,0,255) ) 
-        {
-            if (getpixel(bufferColi,joueur->posx+ joueur->tx ,joueur->posy+ joueur->ty/2 )!= makecol(255,0,255) ) 
-            {
-                if (getpixel(bufferColi,joueur->posx+ joueur->tx ,joueur->posy+ joueur->ty )!= makecol(255,0,255) ) 
-                {
-                    joueur->posx += joueur->depx;      
-                }
-            }
-          
-        }
-        
+        joueur->posx += joueur->depx;
         if (joueur->posx+joueur->tx > SCREEN_W)
         {
             joueur->posx=SCREEN_W-joueur->tx;
@@ -101,19 +76,7 @@ void deplacementPersonnage(t_listeActeurs* ancre, BITMAP *bufferColi)
 
     if (key[KEY_UP])
     {
-        if (getpixel(bufferColi,joueur->posx ,joueur->posy )!= makecol(255,0,255) ) 
-        {
-            if (getpixel(bufferColi,joueur->posx + joueur->tx/2 ,joueur->posy)!= makecol(255,0,255) ) 
-            {
-                if (getpixel(bufferColi,joueur->posx + joueur->tx ,joueur->posy )!= makecol(255,0,255) ) 
-                {
-                    joueur->posy -= joueur->depy;    
-                }
-                
-            }
-            
-        }
-        
+        joueur->posy -= joueur->depy;
         if (joueur->posy<0)
         {
             joueur->posy=0;
@@ -122,13 +85,66 @@ void deplacementPersonnage(t_listeActeurs* ancre, BITMAP *bufferColi)
 
     if (key[KEY_DOWN])
     {
-        
-        
-        joueur->posy += joueur->depy;   
-        
+        joueur->posy += joueur->depy;
         if (joueur->posy+joueur->ty > SCREEN_H)
         {
             joueur->posy=SCREEN_H-joueur->ty;
         }
     }
+}
+
+void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre)
+{
+        //collision décor en +- x si couleur différente de magenta alors rebondi
+
+
+
+// 3 pts en haut
+
+    if(getpixel(fond,x+ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy)!=16711935)
+            {
+               ancre->tabActeur[0]->posx+=ancre->tabActeur[0]->depx;
+            }
+
+    if(getpixel(fond,x+ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy-5)!=16711935)
+            {
+               ancre->tabActeur[0]->posy+=ancre->tabActeur[0]->depy;
+
+            }
+    if(getpixel(fond,x+ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy)!=16711935)
+            {
+               ancre->tabActeur[0]->posx-=ancre->tabActeur[0]->depx;
+
+            }
+            // fin
+        // debut de en bas
+    if(getpixel(fond,x+ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
+            {
+                ancre->tabActeur[0]->posx+=ancre->tabActeur[0]->depx;
+                ancre->tabActeur[0]->posy-=ancre->tabActeur[0]->depy;
+
+            }
+    if(getpixel(fond,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
+            {
+               ancre->tabActeur[0]->posy-=ancre->tabActeur[0]->depy;
+
+            }
+    if(getpixel(fond,x+ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
+            {
+               ancre->tabActeur[0]->posx-=ancre->tabActeur[0]->depx;
+
+            }
+           //fin pts du bas
+        //debut du millieu coté
+    if(getpixel(fond,x+ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=16711935)
+            {
+               ancre->tabActeur[0]->posx+=ancre->tabActeur[0]->depx;
+
+            }
+    if(getpixel(fond,x+ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=makecol(255,0,255))
+            {
+               ancre->tabActeur[0]->posx-=ancre->tabActeur[0]->depx;
+
+            }
+
 }

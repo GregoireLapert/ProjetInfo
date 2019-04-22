@@ -64,7 +64,7 @@ typedef struct listeActeurs
 
     /***décor***/
     BITMAP *decor[15];
-    t_decor *tabDecor[510]
+    t_decor *tabDecor[510];
 
 }t_listeActeurs;
 
@@ -91,20 +91,22 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ);    ///creer objet i
 void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ);   ///test et ajoute intervenant
 void detruireInter(t_listeActeurs* ancre);          ///permet de detruire tout les inter car bug
 /***action***/
-void deplacementPersonnage(t_listeActeurs* ancre, BITMAP *bufferColi);
+void deplacementPersonnage(t_listeActeurs* ancre);
 void tirPersonnage(t_listeActeurs* ancre);
 void deplacementIntervenant(t_listeActeurs* ancre);
 
-void jeu();
+void deplacementEnnemi(t_listeActeurs* ancre);
 
-///en cours de travail
+void jeu();
+/***Decor***/
+
 void recupBitmapDecor(t_listeActeurs *ancre);
-int fibonnaci(int u);
 BITMAP* fondDecor(t_listeActeurs *ancre,BITMAP* ancienFond);
 void generateurDecor(t_listeActeurs *ancre);
 BITMAP *fondBuffer(t_listeActeurs* ancre,BITMAP* ancienFond);
 void creerDecor(t_listeActeurs* ancre,BITMAP* fond,BITMAP* buffer);
 void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre);
-void deplacementEnnemi(t_listeActeurs* ancre);
+void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre);
+// en cour travail
 
 #endif // PROTO_H_INCLUDED
