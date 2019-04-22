@@ -30,9 +30,6 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->affiche = load_bitmap("images\\ennemies\\m3.bmp",NULL);
             break;
 
-
-
-
         case 3:     ///Ennemi 2 : Vaisseau
             nouveau->depx=5;
             nouveau->depy=0;
@@ -71,7 +68,7 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             break;
     }
 
-     nouveau->tx=nouveau->affiche->w;
+    nouveau->tx=nouveau->affiche->w;
     nouveau->ty=nouveau->affiche->h;
 
     return nouveau;
@@ -136,7 +133,7 @@ void deplacementPersonnage(t_listeActeurs* ancre)
 
 void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre)
 {
-        //collision d�cor en +- x si couleur diff�rente de magenta alors rebondi
+        //collision d�cor en +- x si couleur differente de magenta alors rebondi
 
 if(x<10000)
 {

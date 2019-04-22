@@ -129,3 +129,20 @@ void TirEnnemie(t_listeActeurs* ancre)
         }
     }
 }
+
+void TirEnnemi (t_listeActeurs *ancre)
+{
+    int i;
+
+    for (i=0;i<ancre->maxiActeur;i++)
+    {
+        if (ancre->tabActeur[i]!=NULL )
+        {
+            if ((ancre->tabActeur[i]->type==4)&& ancre->tabActeur[i]->posx%200<30 && ancre->tabActeur[i]->posx%2==0)
+                ajoutIntervenant(ancre,ancre->tabActeur [i]->posx,ancre->tabActeur [i]->posy+ ancre->tabActeur[i]->ty/2, 6);
+
+            if ((ancre->tabActeur[i]->type==3)&& ancre->tabActeur[i]->posx%200<30 && ancre->tabActeur[i]->posx%2==0)
+                ajoutIntervenant(ancre,ancre->tabActeur [i]->posx,ancre->tabActeur [i]->posy+ ancre->tabActeur[i]->ty/2, 5);
+        }
+    }
+}

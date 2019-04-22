@@ -7,11 +7,11 @@ void jeu()
     int boss=0;
     t_listeActeurs* ancre=creerListe(80);
 
-    ///Déclaration des bitmap a utiliser
+    ///Dï¿½claration des bitmap a utiliser
     BITMAP *page=NULL;      ///scroll du fond
     page=load_bitmap("images\\Decor\\background\\Fond.bmp",NULL);
     clear_bitmap(screen);
-    BITMAP* fond=fondDecor(ancre,screen);   ///fond = bitmap de 10k pixel de long de décor
+    BITMAP* fond=fondDecor(ancre,screen);   ///fond = bitmap de 10k pixel de long de dï¿½cor
     BITMAP* bufferColi=fondBuffer(ancre,screen);    ///fond de 10 k pixel de buffer
     BITMAP* screenBuffer=create_bitmap(800,600);    ///buffer de screen
 
@@ -36,16 +36,31 @@ void jeu()
         }
 
         testMort(ancre);
-        deplacementPersonnage(ancre);
-        deplacementEnnemi(ancre);
-        deplacementIntervenant(ancre);
-        tirPersonnage(ancre);
-        collisionDecor(fond,xFond,ancre);
-       Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
       popBoss(xFond,ancre,&boss,6);
        TirEnnemie(ancre);
 
+        if(ancre->tabActeur[0]==NULL)
+        {
+            rest(10);
+            rectfill(screen,SCREEN_W/2-100,SCREEN_H/2-30,SCREEN_W/2+100,SCREEN_H/2+30,makecol(255,255,255));
+            textprintf_centre_ex(screen,font,SCREEN_W/2,SCREEN_H/2,makecol(0,0,0),-1,"GAME OVER");
 
+            while(!key[KEY_SPACE])
+            {
+                rest(5);
+            }
+            retour=1;
+        }
+        else
+        {
+            deplacementPersonnage(ancre);
+            deplacementEnnemi(ancre);
+            deplacementIntervenant(ancre);
+            tirPersonnage(ancre);
+            TirEnnemi(ancre);
+            collisionDecor(fond,xFond,ancre);
+            Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
+        }
 
 
 
