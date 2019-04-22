@@ -14,6 +14,14 @@ void jeu()
     BITMAP* fond=fondDecor(ancre,screen);   ///fond = bitmap de 10k pixel de long de d�cor
     BITMAP* bufferColi=fondBuffer(ancre,screen);    ///fond de 10 k pixel de buffer
     BITMAP* screenBuffer=create_bitmap(800,600);    ///buffer de screen
+    BITMAP* GameOver=load_bitmap("images\\gameover.bmp",NULL);
+
+    if (!GameOver)
+    {
+        allegro_message("pas pu trouver/charger gameover.bmp");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
 
     if (!page)
     {
@@ -39,9 +47,8 @@ void jeu()
 
         if(ancre->tabActeur[0]==NULL)
         {
-            rest(10);
-            rectfill(screen,SCREEN_W/2-100,SCREEN_H/2-30,SCREEN_W/2+100,SCREEN_H/2+30,makecol(255,255,255));
-            textprintf_centre_ex(screen,font,SCREEN_W/2,SCREEN_H/2,makecol(0,0,0),-1,"GAME OVER");
+            rest(200);
+            masked_blit(GameOver,screen,0,0,SCREEN_W/2-GameOver->w/2,SCREEN_H/2-GameOver->h/2,GameOver->w,GameOver->h);
 
             while(!key[KEY_SPACE])
             {
