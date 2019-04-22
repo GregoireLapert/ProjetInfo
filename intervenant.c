@@ -26,26 +26,26 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,165,0));
         nouveau->degat=20;
         break;
-        
-    case 3: //laser ennemi
+
+    case 3: ///laser vaisseau ennemi
         nouveau->depx=-20;
         nouveau->depy=0;
         nouveau->tx=15;
-        nouveau->ty=2;
-        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(0,0,255));
-        nouveau->degat=10;
-        break;
-        
-    case 4: //Missile reserver aux tourelles!!!!!!!!!!
-        nouveau->depx=-20;
-        nouveau->depy=-rand()% 19;
-        nouveau->tx=15;
-        nouveau->ty=2;
-        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(0,0,255));
+        nouveau->ty=3;
+        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(0,210,220));
         nouveau->degat=10;
         break;
 
+    case 4: ///Missile reserve aux tourelles!!!!!!!!!!
+        nouveau->depx=-20;
+        nouveau->depy=-rand()%19;
+        nouveau->tx=15;
+        nouveau->ty=5;
+        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(210,120,120));
+        nouveau->degat=10;
+        break;
     }
+
     return nouveau;
 }
 

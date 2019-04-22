@@ -35,15 +35,29 @@ void jeu()
         }
 
         testMort(ancre);
-        deplacementPersonnage(ancre);
-        deplacementEnnemi(ancre);
-        deplacementIntervenant(ancre);
-        tirPersonnage(ancre);
-        TirEnnemiSol ( ancre);
-        collisionDecor(fond,xFond,ancre);
-       Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
 
+        if(ancre->tabActeur[0]==NULL)
+        {
+            rest(10);
+            rectfill(screen,SCREEN_W/2-100,SCREEN_H/2-30,SCREEN_W/2+100,SCREEN_H/2+30,makecol(255,255,255));
+            textprintf_centre_ex(screen,font,SCREEN_W/2,SCREEN_H/2,makecol(0,0,0),-1,"GAME OVER");
 
+            while(!key[KEY_SPACE])
+            {
+                rest(5);
+            }
+            retour=1;
+        }
+        else
+        {
+            deplacementPersonnage(ancre);
+            deplacementEnnemi(ancre);
+            deplacementIntervenant(ancre);
+            tirPersonnage(ancre);
+            TirEnnemi(ancre);
+            collisionDecor(fond,xFond,ancre);
+            Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
+        }
 
 
         if(key[KEY_P] || key[KEY_ESC])
