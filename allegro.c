@@ -17,12 +17,20 @@ void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* f
     int i=0;
 
     ///Scroll infini de Page Background
-	blit(page,screenBuffer,*xPage,0,0,0,SCREEN_W,SCREEN_H);
-
 	*xPage=*xPage+10;
 
-	if (*xPage>1600)
-		*xPage=0;
+    if(*xPage>=page->w)
+        *xPage=0;
+
+    if(*xPage+SCREEN_W<page->w)
+    {
+        blit(page,screenBuffer,*xPage,0,0,0,SCREEN_W,SCREEN_H);
+    }
+    else
+    {
+        blit(page,screenBuffer,*xPage,0,0,0,page->w-*xPage,SCREEN_H);
+        blit(page,screenBuffer,0,0,page->w-*xPage,0,SCREEN_W-(page->w-*xPage),SCREEN_H);
+    }
 	///Fin scroll infini
 
 
@@ -51,6 +59,23 @@ void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* f
                 masked_blit(ancre->tabInter[i]->affiche,screenBuffer,0,0,ancre->tabInter[i]->posx,ancre->tabInter[i]->posy,ancre->tabInter[i]->tx,ancre->tabInter[i]->ty);
          }
     }
+
+    ///Barre de vie
+    int BarreVie=ancre->tabActeur[0]->hp;
+
+    textprintf_ex(screenBuffer,font,10,485,makecol(255,255,255),-1,"VIE");
+
+    for(i=0;i<BarreVie;i++)
+        rectfill(screenBuffer,10,500,10+11*i,510,makecol(255,0,0));
+    rect(screenBuffer,10,500,110,510,makecol(255,255,255));
+
+    ///Jauge de missiles (nombre de missiles disponibles)
+    int nbMissiles=ancre->tabActeur[0]->sp/20;
+
+    textprintf_ex(screenBuffer,font,10,535,makecol(255,255,255),-1,"MISSILES");
+
+    for(i=0;i<nbMissiles;i++)
+        rect(screenBuffer,10+20*i,550,30+20*i,560,makecol(255,255,255));
 
     ///Copie de buffer sur screen
     blit(screenBuffer,screen,0,0,0,0,SCREEN_W,SCREEN_H);

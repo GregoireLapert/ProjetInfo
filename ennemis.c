@@ -42,7 +42,7 @@ void deplacementEnnemi(t_listeActeurs* ancre)
                     ennemi->posy += ennemi->depy;
                 else ennemi->posy -= ennemi->depy;
             }
-            if(ennemi->type==5 || 6)
+            if(ennemi->type==5 || ennemi->type==6)
             {
                 if(rand()%8==0)
                 {
@@ -55,9 +55,6 @@ void deplacementEnnemi(t_listeActeurs* ancre)
                      ennemi->posx+=7;
                     ennemi->posy-=ennemi->depy;
                 }
-
-
-
             }
         }
     }
@@ -69,15 +66,12 @@ void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ)
     {
         ajoutActeur(ancre,600,200,typ);
         *actif+=1;
-
     }
     if(ancre->tabActeur[0]->posx+x >9400 && *actif==2)
     {
         ajoutActeur(ancre,600,200,typ);
         *actif+=1;
-
     }
-
 }
 
 void TirEnnemie(t_listeActeurs* ancre)
@@ -90,13 +84,11 @@ void TirEnnemie(t_listeActeurs* ancre)
     {
         if(ancre->tabActeur[i]!=NULL)
         {
-
-
-        if(ancre->tabActeur[i]->type==5)
-        {
-            if(rand()%50==1)
+            if(ancre->tabActeur[i]->type==5)
             {
-                for(a=0;a<15;a++)
+                if(rand()%50==1)
+                {
+                    for(a=0;a<15;a++)
                     {
                         ajoutIntervenant(ancre,ancre->tabActeur[i]->posx+ancre->tabActeur[i]->tx/2,ancre->tabActeur[i]->posy+ancre->tabActeur[i]->ty/2,3);
                     }
@@ -115,11 +107,11 @@ void TirEnnemie(t_listeActeurs* ancre)
         {
 
 
-        if(ancre->tabActeur[i]->type==6)
-        {
-            if(rand()%5==1)
+            if(ancre->tabActeur[i]->type==6)
             {
-                for(a=0;a<2;a++)
+                if(rand()%5==1)
+                {
+                    for(a=0;a<2;a++)
                     {
                         ajoutIntervenant(ancre,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy+ancre->tabActeur[i]->ty/2+rand()%100,4);
                     }

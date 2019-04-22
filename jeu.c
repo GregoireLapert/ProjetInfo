@@ -36,8 +36,6 @@ void jeu()
         }
 
         testMort(ancre);
-      popBoss(xFond,ancre,&boss,6);
-       TirEnnemie(ancre);
 
         if(ancre->tabActeur[0]==NULL)
         {
@@ -60,6 +58,8 @@ void jeu()
             TirEnnemi(ancre);
             collisionDecor(fond,xFond,ancre);
             Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
+            popBoss(xFond,ancre,&boss,6);
+            TirEnnemie(ancre);
         }
 
 
