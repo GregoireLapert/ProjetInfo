@@ -27,7 +27,7 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->degat=20;
         break;
 
-    case 3: ///laser vaisseau ennemi
+    case 5: ///laser vaisseau ennemi
         nouveau->depx=-20;
         nouveau->depy=0;
         nouveau->tx=15;
@@ -36,7 +36,7 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->degat=10;
         break;
 
-    case 4: ///Missile reserve aux tourelles!!!!!!!!!!
+    case 6: ///Missile reserve aux tourelles!!!!!!!!!!
         nouveau->depx=-20;
         nouveau->depy=-rand()%19;
         nouveau->tx=15;
