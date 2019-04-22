@@ -52,6 +52,23 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->affiche = load_bitmap("ennemi.bmp",NULL);
 
             break;
+            /// boss n°1
+        case 5:
+            nouveau->depx=2;
+            nouveau->depy=2;
+            nouveau->hp=5;
+            nouveau->sp=100.0;
+            nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
+            nouveau->affiche = load_bitmap("images\\ennemies\\BOSSa.bmp",NULL);
+            break;
+        case 6:
+            nouveau->depx=2;
+            nouveau->depy=2;
+            nouveau->hp=5;
+            nouveau->sp=100.0;
+            nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
+            nouveau->affiche = load_bitmap("images\\ennemies\\BOSSb.bmp",NULL);
+            break;
     }
 
      nouveau->tx=nouveau->affiche->w;
@@ -121,9 +138,9 @@ void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre)
 {
         //collision d�cor en +- x si couleur diff�rente de magenta alors rebondi
 
-
-
-// 3 pts en haut
+if(x<10000)
+{
+    // 3 pts en haut
 
     if(getpixel(fond,x+ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy)!=16711935)
             {
@@ -170,5 +187,8 @@ void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre)
                ancre->tabActeur[0]->posx-=ancre->tabActeur[0]->depx;
 
             }
+
+}
+
 
 }

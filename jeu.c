@@ -4,6 +4,7 @@
 void jeu()
 {
     int xPage=0,retour=0,xFond=0;
+    int boss=0;
     t_listeActeurs* ancre=creerListe(80);
 
     ///Déclaration des bitmap a utiliser
@@ -41,6 +42,9 @@ void jeu()
         tirPersonnage(ancre);
         collisionDecor(fond,xFond,ancre);
        Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
+      popBoss(xFond,ancre,&boss,6);
+       TirEnnemie(ancre);
+
 
 
 

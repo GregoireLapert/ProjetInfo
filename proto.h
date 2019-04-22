@@ -107,8 +107,11 @@ BITMAP *fondBuffer(t_listeActeurs* ancre,BITMAP* ancienFond);
 void creerDecor(t_listeActeurs* ancre,BITMAP* fond,BITMAP* buffer);
 void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre);
 void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre);
-// en cour travail
 void deplacementEnnemi(t_listeActeurs* ancre);
 int PopEnnemis(t_listeActeurs* ancre, int place);
+
+// en cour travail
+void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ);
+void TirEnnemie(t_listeActeurs* ancre);
 
 #endif // PROTO_H_INCLUDED

@@ -18,6 +18,7 @@ int PopEnnemis(t_listeActeurs* ancre, int place)
             ancre->tabActeur[place]=constructeurActeur(800,rand()%500,3);
         if(creerE3==1)
             ancre->tabActeur[place]=constructeurActeur(800,480,4);
+
         yes=1;
     }
     return yes;
@@ -40,6 +41,90 @@ void deplacementEnnemi(t_listeActeurs* ancre)
                 if(ennemi->posx%200>100)
                     ennemi->posy += ennemi->depy;
                 else ennemi->posy -= ennemi->depy;
+            }
+            if(ennemi->type==5 || 6)
+            {
+                if(rand()%8==0)
+                {
+                    ennemi->posx+=7;
+                    ennemi->posy+=ennemi->depy;
+                }
+
+                else if(rand()%8==1)
+                {
+                     ennemi->posx+=7;
+                    ennemi->posy-=ennemi->depy;
+                }
+
+
+
+            }
+        }
+    }
+}
+
+void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ)
+{
+    if(ancre->tabActeur[0]->posx+x >9400 && *actif==0)
+    {
+        ajoutActeur(ancre,600,200,typ);
+        *actif+=1;
+
+    }
+    if(ancre->tabActeur[0]->posx+x >9400 && *actif==2)
+    {
+        ajoutActeur(ancre,600,200,typ);
+        *actif+=1;
+
+    }
+
+}
+
+void TirEnnemie(t_listeActeurs* ancre)
+{
+    int i=0;
+    int a=0;
+
+    //recherche et attaque du boss 1
+    for(i=0;i<ancre->maxiActeur;i++)
+    {
+        if(ancre->tabActeur[i]!=NULL)
+        {
+
+
+        if(ancre->tabActeur[i]->type==5)
+        {
+            if(rand()%50==1)
+            {
+                for(a=0;a<15;a++)
+                    {
+                        ajoutIntervenant(ancre,ancre->tabActeur[i]->posx+ancre->tabActeur[i]->tx/2,ancre->tabActeur[i]->posy+ancre->tabActeur[i]->ty/2,3);
+                    }
+
+                }
+            }
+        }
+    }
+
+    //recherche et attaque boss 2
+
+
+    for(i=0;i<ancre->maxiActeur;i++)
+    {
+        if(ancre->tabActeur[i]!=NULL)
+        {
+
+
+        if(ancre->tabActeur[i]->type==6)
+        {
+            if(rand()%5==1)
+            {
+                for(a=0;a<2;a++)
+                    {
+                        ajoutIntervenant(ancre,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy+ancre->tabActeur[i]->ty/2+rand()%100,4);
+                    }
+
+                }
             }
         }
     }
