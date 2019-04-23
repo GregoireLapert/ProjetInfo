@@ -108,7 +108,7 @@ void creerDecor(t_listeActeurs* ancre,BITMAP* fond,BITMAP* buffer);
 void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre);
 void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre);
 void deplacementEnnemi(t_listeActeurs* ancre);
-int PopEnnemis(t_listeActeurs* ancre, int place);
+int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3);
 
 // en cour travail
 void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ);

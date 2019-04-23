@@ -32,7 +32,7 @@ void jeu()
         while(yes==0)
         {
             place++;
-            yes=PopEnnemis(ancre,place);
+            yes=PopEnnemis(ancre,place,90,90,200);
         }
 
         testMort(ancre);

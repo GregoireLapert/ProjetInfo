@@ -1,6 +1,6 @@
 #include "proto.h"
 
-int PopEnnemis(t_listeActeurs* ancre, int place)
+int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3)
 {
     int creerE1,creerE2,creerE3;
     int yes;
@@ -9,9 +9,9 @@ int PopEnnemis(t_listeActeurs* ancre, int place)
         yes=0;
     else
     {
-        creerE1=rand()%90;
-        creerE2=rand()%90;
-        creerE3=rand()%200;
+        creerE1=rand()%val1;
+        creerE2=rand()%val2;
+        creerE3=rand()%val3;
         if(creerE1==1)
             ancre->tabActeur[place] = constructeurActeur(800,rand()%500,2);
         if(creerE2==1)
