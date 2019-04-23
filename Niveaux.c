@@ -2,17 +2,46 @@
 
 int Niveau1()
 {
-    int place=0, yes=0, clear=0;
+    int clear=0;
+    int xPage=0,xFond=0;
+    int boss=0,i;
+    t_listeActeurs* ancre=creerListe(80);
+
+    ///Declaration des bitmap a utiliser
+    BITMAP *page=load_bitmap("images\\Decor\\background\\Fond.bmp",NULL);   ///Fond arriere
+    clear_bitmap(screen);
+    BITMAP* fond=fondDecor(ancre,screen);   ///fond = bitmap de 10k pixel de long de d�cor
+    BITMAP* bufferColi=fondBuffer(ancre,screen);    ///fond de 10 k pixel de buffer
+    BITMAP* screenBuffer=create_bitmap(800,600);    ///buffer de screen
+    BITMAP* GameOver=load_bitmap("images\\gameover.bmp",NULL);
+
+    if (!GameOver)
+    {
+        allegro_message("pas pu trouver/charger gameover.bmp");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
+
+    if (!page)
+    {
+        allegro_message("pas pu trouver/charger back.bmp");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
+
+    BITMAP* bufferColi=fondBuffer(ancre,screen);    ///fond de 10 k pixel de buffer
+    BITMAP* screenBuffer=create_bitmap(800,600);    ///buffer de screen
 
     while(clear==0)
     {
+        int place=0, yes=0;
         ///Affichage aleatoire d'ennemis
         if(boss==0)
         {
             while(yes==0)
             {
                 place++;
-                yes=PopEnnemis(ancre,place,90,100,300);
+                yes=PopEnnemis(ancre,place,90,100,0);
             }
         }
 
@@ -25,7 +54,7 @@ int Niveau1()
 
             while(!key[KEY_SPACE])
                 rest(5);
-            retour=1;
+            clear=-1;
         }
         else
         {
@@ -36,7 +65,7 @@ int Niveau1()
             TirEnnemi(ancre);
             collisionDecor(fond,xFond,ancre);
             Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
-            popBoss(xFond,ancre,&boss,6);
+            popBoss(xFond,ancre,&boss,5);
         }
 
 
@@ -59,4 +88,10 @@ int Niveau1()
         }
         rest(30);
     }
+
+    free(ancre);
+    destroy_bitmap(GameOver);
+    destroy_bitmap(page);
+    for(i=0;i<15;i++)
+        destroy_bitmap(ancre->decor[i]);
 }
