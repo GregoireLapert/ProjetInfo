@@ -49,6 +49,7 @@ int main()
         ///Jeu
         else if(choix==4)
         {
+            tutoriel();
             jeu(0,0,0);
             choix=-1;
         }

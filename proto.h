@@ -81,6 +81,7 @@ void MenuNiveau(int*choix);
 void AffMJ();
 void AffMP();
 void AffMM();
+void tutoriel();
 
 /***Structure***/
 t_acteur* constructeurActeur(int x,int y,int typ);  ///cr�e objet acteur
