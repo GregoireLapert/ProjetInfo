@@ -64,7 +64,7 @@ void jeu()
             deplacementPersonnage(ancre);
             deplacementEnnemi(ancre);
             deplacementIntervenant(ancre);
-            tirPersonnage(ancre);
+            tirPersonnage(ancre,&xPage);
             TirEnnemi(ancre);
             collisionDecor(fond,xFond,ancre);
             Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);

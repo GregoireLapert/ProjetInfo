@@ -69,7 +69,6 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
 ///Ajoute un intervenant
 void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ)
 {
-
     if(ancre->nInter < ancre->maxiInter)
     {
         int i=0;

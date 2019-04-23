@@ -143,34 +143,35 @@
 1556026914 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\ennemis.c
 	"proto.h"
 
-1555848633 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\menuprincipal.c
+1556026505 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\menuprincipal.c
 	"proto.h"
 	<allegro.h>
 
-1556025628 c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\proto.h
+1556032542 c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\proto.h
 	<allegro.h>
 	<stdlib.h>
 	<stdio.h>
 	<time.h>
 
-1555960863 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\action.c
+1556032499 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\action.c
 	"proto.h"
 	<allegro.h>
+	<time.h>
 
-1555960863 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\allegro.c
+1556026529 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\allegro.c
 	"proto.h"
 	<allegro.h>
 
 1555948191 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\decors.c
 	"proto.h"
 
-1556024534 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\ennemis.c
+1556026686 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\ennemis.c
 	"proto.h"
 
-1556024780 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\intervenant.c
+1556031525 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\intervenant.c
 	"proto.h"
 
-1555960863 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\jeu.c
+1556032556 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\jeu.c
 	"proto.h"
 	<allegro.h>
 
@@ -186,7 +187,7 @@
 1555956881 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\structure.c
 	"proto.h"
 
-1555960863 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\acteur.c
+1556026505 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\acteur.c
 	"proto.h"
 
 1555948718 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\decors.c
