@@ -42,7 +42,7 @@ void jeu()
             while(yes==0)
             {
                 place++;
-                yes=PopEnnemis(ancre,place,90,90,200);
+                yes=PopEnnemis(ancre,place,90,100,300);
             }
         }
 
@@ -72,7 +72,7 @@ void jeu()
         }
 
 
-
+        ///Pause
         if(key[KEY_P] || key[KEY_ESC])
         {
             rectfill(screen,SCREEN_W/2-200,SCREEN_H/2-50,SCREEN_W/2+200,SCREEN_H/2+50,makecol(255,255,255));

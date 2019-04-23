@@ -67,11 +67,6 @@ void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ)
         ajoutActeur(ancre,600,200,typ);
         *actif+=1;
     }
-    if(ancre->tabActeur[0]->posx+x >9400 && *actif==2)
-    {
-        ajoutActeur(ancre,600,200,typ);
-        *actif+=1;
-    }
 }
 
 void TirEnnemi (t_listeActeurs *ancre)

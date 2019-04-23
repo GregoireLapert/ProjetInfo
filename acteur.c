@@ -133,11 +133,11 @@ void deplacementPersonnage(t_listeActeurs* ancre)
 
 void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre)
 {
-        //collision d�cor en +- x si couleur differente de magenta alors rebondi
+    ///collision d�cor en +- x si couleur differente de magenta alors rebondi
 
-    if(x<10000)
+    if(x<9700)
     {
-        // 3 pts en haut
+        /// 3 pts en haut
 
         if(getpixel(fond,x+ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy)!=16711935)
         {
@@ -152,24 +152,24 @@ void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre)
         {
            ancre->tabActeur[0]->posx-=ancre->tabActeur[0]->depx;
         }
-                // fin
-            // debut de en bas
+                /// fin
+            /// debut de en bas
         if(getpixel(fond,x+ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
         {
             ancre->tabActeur[0]->posx+=ancre->tabActeur[0]->depx;
             ancre->tabActeur[0]->posy-=ancre->tabActeur[0]->depy;
         }
         if(getpixel(fond,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
-                {
-                   ancre->tabActeur[0]->posy-=ancre->tabActeur[0]->depy;
+        {
+           ancre->tabActeur[0]->posy-=ancre->tabActeur[0]->depy;
 
-                }
+        }
         if(getpixel(fond,x+ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
         {
            ancre->tabActeur[0]->posx-=ancre->tabActeur[0]->depx;
         }
-               //fin pts du bas
-            //debut du millieu cot�
+               ///fin pts du bas
+            ///debut du millieu cot�
         if(getpixel(fond,x+ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=16711935)
         {
            ancre->tabActeur[0]->posx+=ancre->tabActeur[0]->depx;
@@ -178,6 +178,5 @@ void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre)
         {
            ancre->tabActeur[0]->posx-=ancre->tabActeur[0]->depx;
         }
-
     }
 }
