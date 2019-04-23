@@ -37,6 +37,9 @@
 		<Unit filename="MenuPrincipal.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Niveaux.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="acteur.c">
 			<Option compilerVar="CC" />
 		</Unit>

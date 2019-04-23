@@ -34,7 +34,7 @@ int main()
     /************************************************************/
 
     show_mouse(screen);
-    int fin,choix;
+    int fin,choix=789;
 
     while(fin!=1)
     {
@@ -42,8 +42,6 @@ int main()
         /********** Mettre tout en commentaire sauf "jeu()" si tester sans menu **********/
 
         ///Menu principal
-        if(choix!=4)
-            MenuPrincipal(&choix);
         if(choix==1)
             MenuJouer(&choix);
         else if(choix==3)
@@ -51,9 +49,20 @@ int main()
         ///Jeu
         else if(choix==4)
         {
-            jeu();
+            jeu(0,0,0);
             choix=-1;
         }
+        else if(choix==5)
+        {
+            jeu(1,0,0);
+            choix=-1;
+        }
+        else if(choix==6)
+        {
+            jeu(1,1,0);
+            choix=-1;
+        }
+        else MenuPrincipal(&choix);
 
     }
 

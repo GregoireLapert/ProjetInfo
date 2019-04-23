@@ -9,13 +9,16 @@ int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3)
         yes=0;
     else
     {
-        creerE1=rand()%val1;
-        creerE2=rand()%val2;
-        creerE3=rand()%val3;
+        if(val1!=0)
+            creerE1=rand()%val1;
+        if(val2!=0)
+            creerE2=rand()%val2;
+        if(val3!=0)
+            creerE3=rand()%val3;
         if(creerE1==1)
-            ancre->tabActeur[place] = constructeurActeur(800,rand()%500,2);
+            ancre->tabActeur[place] = constructeurActeur(800,rand()%(349)+100,2);
         if(creerE2==1)
-            ancre->tabActeur[place] = constructeurActeur(800,rand()%500,3);
+            ancre->tabActeur[place] = constructeurActeur(800,rand()%(349)+100,3);
         if(creerE3==1)
             ancre->tabActeur[place] = constructeurActeur(800,480,4);
 
@@ -202,7 +205,7 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
 
     }
 
-    //collison entre ennemi 
+    //collison entre ennemi
 
         if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy)!=16711935)
         {

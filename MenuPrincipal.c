@@ -51,7 +51,7 @@ void MenuPrincipal(int*choix)
                 *choix=1;
             }
         }
-        else if(mouse_x>340 && mouse_x<470 && mouse_y>350 && mouse_y<370)
+        else if(mouse_x>330 && mouse_x<480 && mouse_y>350 && mouse_y<370)
         {
             if(oui==0)
             {
@@ -67,7 +67,7 @@ void MenuPrincipal(int*choix)
                 *choix=2;
             }
         }
-        else if(mouse_x>340 && mouse_x<470 && mouse_y>420 && mouse_y<450)
+        else if(mouse_x>330 && mouse_x<480 && mouse_y>420 && mouse_y<450)
         {
             if(oui==0)
             {
@@ -156,7 +156,7 @@ void MenuJouer(int*choix)
 
     while(*choix==0)
     {
-        if(mouse_x>350 && mouse_x<460 && mouse_y>270 && mouse_y<300)
+        if(mouse_x>260 && mouse_x<570 && mouse_y>270 && mouse_y<300)
         {
             if(oui==0)
             {
@@ -172,7 +172,7 @@ void MenuJouer(int*choix)
                 *choix=4;
             }
         }
-        else if(mouse_x>340 && mouse_x<470 && mouse_y>350 && mouse_y<370)
+        else if(mouse_x>260 && mouse_x<570 && mouse_y>350 && mouse_y<370)
         {
             if(oui==0)
             {
@@ -256,15 +256,16 @@ void MenuNiveau(int*choix)
     int oui=0,lock=1;
 
     AffMM();
+    rest(200);
 
     while(lock!=0)
     {
-        if(mouse_x>350 && mouse_x<460 && mouse_y>270 && mouse_y<300)
+        if(mouse_x>350 && mouse_x<460 && mouse_y>245 && mouse_y<275)
         {
             if(oui==0)
             {
                 play_sample(bouton,40,128,1000,0);
-                textprintf_ex(texte2,font,260/2,220/2,makecol(220,140,255),-1,"NIVEAU 1");
+                textprintf_ex(texte2,font,260/2,200/2,makecol(220,140,255),-1,"NIVEAU 1");
                 stretch_blit(texte2,buffer,0,0,texte->w,texte->h,0,0,buffer->w*2.5,buffer->h*2.5);
                 draw_sprite(screen,buffer,0,0);
                 oui=1;
@@ -276,12 +277,12 @@ void MenuNiveau(int*choix)
                 lock=0;
             }
         }
-        else if(mouse_x>340 && mouse_x<470 && mouse_y>350 && mouse_y<370)
+        else if(mouse_x>340 && mouse_x<470 && mouse_y>310 && mouse_y<340)
         {
             if(oui==0)
             {
                 play_sample(bouton,40,128,1000,0);
-                textprintf_ex(texte2,font,260/2,280/2,makecol(220,140,255),-1,"NIVEAU 2");
+                textprintf_ex(texte2,font,260/2,250/2,makecol(220,140,255),-1,"NIVEAU 2");
                 stretch_blit(texte2,buffer,0,0,texte->w,texte->h,0,0,buffer->w*2.5,buffer->h*2.5);
                 draw_sprite(screen,buffer,0,0);
                 oui=2;
@@ -289,19 +290,36 @@ void MenuNiveau(int*choix)
             if(mouse_b&1)
             {
                 play_sample(valider,40,128,1000,0);
-                *choix=0;
+                *choix=5;
                 lock=0;
             }
         }
-        else if(mouse_x>340 && mouse_x<470 && mouse_y>420 && mouse_y<450)
+        else if(mouse_x>340 && mouse_x<470 && mouse_y>370 && mouse_y<400)
         {
             if(oui==0)
             {
                 play_sample(bouton,40,128,1000,0);
-                textprintf_ex(texte2,font,270/2,340/2,makecol(220,140,255),-1,"RETOUR");
+                textprintf_ex(texte2,font,260/2,300/2,makecol(220,140,255),-1,"NIVEAU 3");
                 stretch_blit(texte2,buffer,0,0,texte->w,texte->h,0,0,buffer->w*2.5,buffer->h*2.5);
                 draw_sprite(screen,buffer,0,0);
                 oui=3;
+            }
+            if(mouse_b&1)
+            {
+                play_sample(valider,40,128,1000,0);
+                *choix=6;
+                lock=0;
+            }
+        }
+        else if(mouse_x>340 && mouse_x<470 && mouse_y>430 && mouse_y<460)
+        {
+            if(oui==0)
+            {
+                play_sample(bouton,40,128,1000,0);
+                textprintf_ex(texte2,font,270/2,350/2,makecol(220,140,255),-1,"RETOUR");
+                stretch_blit(texte2,buffer,0,0,texte->w,texte->h,0,0,buffer->w*2.5,buffer->h*2.5);
+                draw_sprite(screen,buffer,0,0);
+                oui=4;
             }
             if(mouse_b&1)
             {
@@ -314,11 +332,13 @@ void MenuNiveau(int*choix)
         }
         else{
             if(oui==1)
-                textprintf_ex(texte2,font,260/2,220/2,makecol(255,255,255),-1,"NIVEAU 1");
+                textprintf_ex(texte2,font,260/2,200/2,makecol(255,255,255),-1,"NIVEAU 1");
             else if(oui==2)
-                textprintf_ex(texte2,font,260/2,280/2,makecol(255,255,255),-1,"NIVEAU 2");
+                textprintf_ex(texte2,font,260/2,250/2,makecol(255,255,255),-1,"NIVEAU 2");
             else if(oui==3)
-                textprintf_ex(texte2,font,270/2,340/2,makecol(255,255,255),-1,"RETOUR");
+                textprintf_ex(texte2,font,260/2,300/2,makecol(255,255,255),-1,"NIVEAU 3");
+            else if(oui==4)
+                textprintf_ex(texte2,font,270/2,350/2,makecol(255,255,255),-1,"RETOUR");
             if(oui!=0)
             {
                 stretch_blit(texte2,buffer,0,0,texte->w,texte->h,0,0,buffer->w*2.5,buffer->h*2.5);
@@ -421,9 +441,10 @@ void AffMM()
 
     textprintf_ex(texte,font,130/2.5,90/2.5,makecol(255,255,255),-1,"CHOIX DU NIVEAU");
     stretch_blit(texte,texte2,0,0,texte->w,texte->h,0,0,texte->w*1.5,texte->h*1.5);
-    textprintf_ex(texte2,font,260/2,220/2,makecol(255,255,255),-1,"NIVEAU 1");
-    textprintf_ex(texte2,font,260/2,280/2,makecol(255,255,255),-1,"NIVEAU 2");
-    textprintf_ex(texte2,font,270/2,340/2,makecol(255,255,255),-1,"RETOUR");
+    textprintf_ex(texte2,font,260/2,200/2,makecol(255,255,255),-1,"NIVEAU 1");
+    textprintf_ex(texte2,font,260/2,250/2,makecol(255,255,255),-1,"NIVEAU 2");
+    textprintf_ex(texte2,font,260/2,300/2,makecol(255,255,255),-1,"NIVEAU 3");
+    textprintf_ex(texte2,font,270/2,350/2,makecol(255,255,255),-1,"RETOUR");
     stretch_blit(texte2,buffer,0,0,texte->w,texte->h,0,0,buffer->w*2.5,buffer->h*2.5);
     draw_sprite(screen,buffer,0,0);
 
