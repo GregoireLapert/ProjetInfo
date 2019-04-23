@@ -2,6 +2,7 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+<<<<<<< HEAD
 	<File name="proto.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="3207" topLine="71" />
@@ -10,6 +11,16 @@
 	<File name="intervenant.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1184" topLine="59" />
+=======
+	<File name="jeu.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="255" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="proto.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3207" topLine="71" />
+>>>>>>> gregoire
 		</Cursor>
 	</File>
 	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -17,6 +28,7 @@
 			<Cursor1 position="937" topLine="25" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="structure.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1568" topLine="8" />
@@ -25,6 +37,16 @@
 	<File name="MenuPrincipal.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="542" topLine="8" />
+=======
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="937" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="ennemis.c" open="1" top="1" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2993" topLine="108" />
+>>>>>>> gregoire
 		</Cursor>
 	</File>
 	<File name="jeu.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -32,9 +54,15 @@
 			<Cursor1 position="1927" topLine="56" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="acteur.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="3368" topLine="25" />
+=======
+	<File name="MenuPrincipal.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="542" topLine="8" />
+>>>>>>> gregoire
 		</Cursor>
 	</File>
 	<File name="action.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -42,6 +70,7 @@
 			<Cursor1 position="659" topLine="0" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="allegro.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2002" topLine="62" />
@@ -55,6 +84,21 @@
 	<File name="ennemis.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1702" topLine="123" />
+=======
+	<File name="acteur.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1051" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="allegro.c" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="838" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="decors.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2254" topLine="0" />
+>>>>>>> gregoire
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
