@@ -42,7 +42,7 @@ void deplacementEnnemi(t_listeActeurs* ancre)
                     ennemi->posy += ennemi->depy;
                 else ennemi->posy -= ennemi->depy;
             }
-            if(ennemi->type==5 || 6)
+            if(ennemi->type==5 || ennemi->type==6)
             {
                 if(rand()%8==0)
                 {

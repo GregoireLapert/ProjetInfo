@@ -36,7 +36,7 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->hp=10;
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
-            nouveau->affiche = load_bitmap("ennemi.bmp",NULL);
+            nouveau->affiche = load_bitmap("images\\ennemies\\m4.bmp",NULL);
 
             break;
 
@@ -46,7 +46,7 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->hp=5;
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
-            nouveau->affiche = load_bitmap("ennemi.bmp",NULL);
+            nouveau->affiche = load_bitmap("images\\ennemies\\m6.bmp",NULL);
 
             break;
             /// boss n°1

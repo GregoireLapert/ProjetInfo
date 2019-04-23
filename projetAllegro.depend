@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1555954031 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\acteur.c
+1555957692 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\acteur.c
 	"proto.h"
 
-1555954520 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\intervenant.c
+1555956304 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\intervenant.c
 	"proto.h"
 
 1555855341 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\main.c
@@ -14,16 +14,16 @@
 	"proto.h"
 	<allegro.h>
 
-1555951991 d:\cour\informatique\projet perso\projet-informatique\projetinfo\proto.h
+1555955076 d:\cour\informatique\projet perso\projet-informatique\projetinfo\proto.h
 	<allegro.h>
 	<stdlib.h>
 	<stdio.h>
 	<time.h>
 
-1555948718 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\structure.c
+1555956304 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\structure.c
 	"proto.h"
 
-1555855341 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\action.c
+1555956304 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\action.c
 	"proto.h"
 	<allegro.h>
 
@@ -89,7 +89,7 @@
 	"proto.h"
 	<allegro.h>
 
-1555954031 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\jeu.c
+1555956304 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\jeu.c
 	"proto.h"
 	<allegro.h>
 
@@ -192,7 +192,7 @@
 1555948718 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\decors.c
 	"proto.h"
 
-1555954603 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\ennemis.c
+1555957729 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\ennemis.c
 	"proto.h"
 
 1555881940 ter
