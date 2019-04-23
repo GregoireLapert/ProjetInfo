@@ -147,15 +147,16 @@
 	"proto.h"
 	<allegro.h>
 
-1556026529 c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\proto.h
+1556032542 c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\proto.h
 	<allegro.h>
 	<stdlib.h>
 	<stdio.h>
 	<time.h>
 
-1556026529 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\action.c
+1556032499 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\action.c
 	"proto.h"
 	<allegro.h>
+	<time.h>
 
 1556026529 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\allegro.c
 	"proto.h"
@@ -164,13 +165,13 @@
 1555948191 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\decors.c
 	"proto.h"
 
-1556024534 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\ennemis.c
+1556026686 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\ennemis.c
 	"proto.h"
 
-1556026529 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\intervenant.c
+1556031525 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\intervenant.c
 	"proto.h"
 
-1556026529 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\jeu.c
+1556032556 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\jeu.c
 	"proto.h"
 	<allegro.h>
 

@@ -92,7 +92,8 @@ void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ);   ///test et a
 
 /***action***/
 void deplacementPersonnage(t_listeActeurs* ancre);
-void tirPersonnage(t_listeActeurs* ancre);
+void tirPersonnage(t_listeActeurs* ancre, int *xpage);
+
 void deplacementIntervenant(t_listeActeurs* ancre);
 void deplacementEnnemi(t_listeActeurs* ancre);
 
