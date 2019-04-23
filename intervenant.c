@@ -54,8 +54,8 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         break;
 
     case 6: ///Missile reserve aux tourelles!!!!!!!!!!
-        nouveau->depx=-20;
-        nouveau->depy=-rand()%19;
+        nouveau->depx=-9;
+        nouveau->depy= - rand()%10;
         nouveau->tx=15;
         nouveau->ty=5;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(210,120,120));

@@ -17,7 +17,7 @@ void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* f
     int i=0;
 
     ///Scroll infini de Page Background
-	*xPage=*xPage+10;
+	*xPage=*xPage+2;
 
     if(*xPage>=page->w)
         *xPage=0;
@@ -70,7 +70,7 @@ void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* f
     rect(screenBuffer,10,500,110,510,makecol(255,255,255));
 
     ///Jauge de missiles (nombre de missiles disponibles)
-    int nbMissiles=ancre->tabActeur[0]->sp/20;
+    int nbMissiles=ancre->tabActeur[0]->sp/30;
 
     textprintf_ex(screenBuffer,font,10,535,makecol(255,255,255),-1,"MISSILES");
 
