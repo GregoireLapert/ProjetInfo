@@ -50,7 +50,7 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->tx=15;
         nouveau->ty=3;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(0,210,220));
-        nouveau->degat=10;
+        nouveau->degat=1;
         break;
 
     case 6: ///Missile reserve aux tourelles!!!!!!!!!!
@@ -59,9 +59,11 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->tx=15;
         nouveau->ty=5;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(210,120,120));
-        nouveau->degat=10;
+        nouveau->degat=1;
         break;
     }
+
+    nouveau->collision=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
 
     return nouveau;
 }

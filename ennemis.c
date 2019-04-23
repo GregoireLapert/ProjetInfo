@@ -113,3 +113,158 @@ void TirEnnemi (t_listeActeurs *ancre)
         }
     }
 }
+
+
+void AffichageBuffer(BITMAP* buffer,t_listeActeurs* ancre)
+{
+    int i;
+    clear_to_color(buffer,makecol(255,0,255));
+
+     for(i=0;i<ancre->maxiActeur;i++)
+    {
+         if(ancre->tabActeur[i]!=NULL)
+         {
+             if(ancre->tabActeur[i]->etat!=0)
+                blit(ancre->tabActeur[i]->collision,buffer,0,0,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy,ancre->tabActeur[i]->tx,ancre->tabActeur[i]->ty);
+         }
+    }
+
+    ///Parcours et affichage des intervenants
+    for(i=0;i<ancre->maxiInter;i++)
+    {
+         if(ancre->tabInter[i]!=NULL)
+         {
+             if(ancre->tabInter[i]->etat!=0)
+                blit(ancre->tabInter[i]->collision,buffer,0,0,ancre->tabInter[i]->posx,ancre->tabInter[i]->posy,ancre->tabInter[i]->tx,ancre->tabInter[i]->ty);
+         }
+    }
+
+}
+
+void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
+{
+    int gauche=0;
+    int droite=0;
+    int cpt=0;
+    int i=0;
+
+    /////collision tir////
+     for(i=0;i<ancre->maxiInter;i++)
+    {
+         if(ancre->tabInter[i]!=NULL)
+         {
+             if(ancre->tabInter[i]->etat!=0)
+               {
+                gauche=getpixel(buffer,ancre->tabInter[i]->posx-5,ancre->tabInter[i]->posy+(ancre->tabInter[i]->ty/2));
+                droite=getpixel(buffer,ancre->tabInter[i]->posx+ancre->tabInter[i]->tx,ancre->tabInter[i]->posy+(ancre->tabInter[i]->ty/2));
+
+                if(ancre->tabInter[i]->type<=2)
+                {//////// laser allié
+                    if(gauche!=makecol(0,255,0) || droite !=makecol(0,255,0))
+                    {
+                        for(cpt=1;cpt<ancre->maxiActeur;cpt++)
+                        {
+                        if(ancre->tabActeur[cpt]!=NULL)
+                        {
+                            if(ancre->tabActeur[cpt]->etat!=0)
+                            {
+                                if(ancre->tabActeur[cpt]->id==gauche || ancre->tabActeur[cpt]->id==droite)
+                                {
+                                    ancre->tabActeur[cpt]->hp-=ancre->tabInter[i]->degat;
+                                    //caler bitmap explosions
+                                    ancre->tabInter[i]->etat=0;
+
+                                }
+                            }
+
+                        }
+
+                        }
+                    }
+                }
+                else
+                {
+                    if(gauche==makecol(0,255,0) || droite==makecol(0,255,0))
+                    {
+                       ancre->tabActeur[0]->hp-=ancre->tabInter[i]->degat;
+                       ancre->tabInter[i]->etat=0;
+                       //caler bitmap explosions
+                    }
+                }
+
+
+         }
+    }
+
+
+
+
+
+    }
+
+    //collison entre ennemie
+
+        if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy)!=16711935)
+        {
+
+           ancre->tabActeur[0]->hp-=5;
+        }
+
+        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy-5)!=16711935)
+        {
+
+           ancre->tabActeur[0]->hp-=5;
+        }
+        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy)!=16711935)
+        {
+
+           ancre->tabActeur[0]->hp-=5;
+        }
+                // fin
+            // debut de en bas
+        if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
+        {
+
+            ancre->tabActeur[0]->hp-=5;
+        }
+        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
+                {
+
+                   ancre->tabActeur[0]->hp-=5;
+
+                }
+        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
+        {
+
+           ancre->tabActeur[0]->hp-=5;
+        }
+               //fin pts du bas
+            //debut du millieu cot�
+        if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=16711935)
+        {
+
+           ancre->tabActeur[0]->hp-=5;
+        }
+        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=makecol(255,0,255))
+        {
+
+           ancre->tabActeur[0]->hp-=5;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+

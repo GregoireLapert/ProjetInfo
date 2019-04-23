@@ -16,7 +16,7 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->depy=10;
             nouveau->hp=10;
             nouveau->sp=100.0;
-            nouveau->id=makecol(rand()%255,rand()%255,rand()%255);  ///Mettre une couleur fixe
+            nouveau->id=makecol(0,255,0);  ///Mettre une couleur fixe
             nouveau->affiche = load_bitmap("vaisseau.bmp",NULL);
 
             break;
@@ -70,7 +70,7 @@ t_acteur* constructeurActeur(int x,int y,int typ)
 
     nouveau->tx=nouveau->affiche->w;
     nouveau->ty=nouveau->affiche->h;
-
+    nouveau->collision=objet(nouveau->tx,nouveau->ty,nouveau->id);
     return nouveau;
 }
 
