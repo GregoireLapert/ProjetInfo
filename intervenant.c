@@ -16,7 +16,7 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->tx=15;
         nouveau->ty=2;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
-        nouveau->degat=10;
+        nouveau->degat=5;
         break;
     case 2: ///missile
         nouveau->depx=5;
@@ -24,7 +24,7 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->tx=30;
         nouveau->ty=10;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,165,0));
-        nouveau->degat=20;
+        nouveau->degat=10;
         break;
    case 3://laser boss1
         nouveau->depx=rand()%10-5;

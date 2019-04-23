@@ -202,53 +202,53 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
 
     }
 
-    //collison entre ennemie
+    //collison entre ennemi
 
         if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy)!=16711935)
         {
 
-           ancre->tabActeur[0]->hp-=5;
+           ancre->tabActeur[0]->hp-=0.1;
         }
 
         if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy-5)!=16711935)
         {
 
-           ancre->tabActeur[0]->hp-=5;
+           ancre->tabActeur[0]->hp-=0.1;
         }
         if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy)!=16711935)
         {
 
-           ancre->tabActeur[0]->hp-=5;
+           ancre->tabActeur[0]->hp-=0.1;
         }
                 // fin
             // debut de en bas
         if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
         {
 
-            ancre->tabActeur[0]->hp-=5;
+            ancre->tabActeur[0]->hp-=0.1;
         }
         if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
                 {
 
-                   ancre->tabActeur[0]->hp-=5;
+                   ancre->tabActeur[0]->hp-=0.1;
 
                 }
         if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
         {
 
-           ancre->tabActeur[0]->hp-=5;
+           ancre->tabActeur[0]->hp-=0.1;
         }
                //fin pts du bas
             //debut du millieu cot�
         if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=16711935)
         {
 
-           ancre->tabActeur[0]->hp-=5;
+           ancre->tabActeur[0]->hp-=0.1;
         }
         if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=makecol(255,0,255))
         {
 
-           ancre->tabActeur[0]->hp-=5;
+           ancre->tabActeur[0]->hp-=0.1;
         }
 
 

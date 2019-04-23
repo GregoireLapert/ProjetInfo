@@ -19,7 +19,7 @@ int posx;
 int posy;
 int depx;
 int depy;
-int hp;         ///pts de vie acteur
+float hp;         ///pts de vie acteur
 float sp;       ///pts �nergie acteur en pourcent
 int id;         ///correspond au makecol du buffer de collision
 int etat;       ///0=mort 1=vie
