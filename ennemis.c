@@ -202,7 +202,7 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
 
     }
 
-    //collison entre ennemi
+    //collison entre ennemi 
 
         if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy)!=16711935)
         {

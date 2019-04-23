@@ -53,15 +53,23 @@ t_acteur* constructeurActeur(int x,int y,int typ)
         case 5:
             nouveau->depx=2;
             nouveau->depy=2;
-            nouveau->hp=5;
+            nouveau->hp=70;
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
             nouveau->affiche = load_bitmap("images\\ennemies\\BOSSa.bmp",NULL);
             break;
         case 6:
-            nouveau->depx=2;
-            nouveau->depy=2;
-            nouveau->hp=5;
+            nouveau->depx=3;
+            nouveau->depy=3
+            nouveau->hp=100;
+            nouveau->sp=100.0;
+            nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
+            nouveau->affiche = load_bitmap("images\\ennemies\\BOSSb.bmp",NULL);
+            break;
+        case 7:
+            nouveau->depx=4;
+            nouveau->depy=4;
+            nouveau->hp=130;
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
             nouveau->affiche = load_bitmap("images\\ennemies\\BOSSb.bmp",NULL);
@@ -97,9 +105,9 @@ void deplacementPersonnage(t_listeActeurs* ancre)
     if(key[KEY_LEFT])
     {
         joueur->posx -= joueur->depx;
-        if (joueur->posx<0)
+        if (joueur->posx<5)
         {
-            joueur->posx=0;
+            joueur->posx=5;
         }
     }
 
