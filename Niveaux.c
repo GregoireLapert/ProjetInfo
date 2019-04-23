@@ -1,41 +1,11 @@
 #include "proto.h"
-#include <allegro.h>
 
-void jeu()
+int Niveau1()
 {
-    int xPage=0,retour=0,xFond=0;
-    int boss=0,i;
-    t_listeActeurs* ancre=creerListe(80);
+    int place=0, yes=0, clear=0;
 
-    ///D�claration des bitmap a utiliser
-    BITMAP *page=NULL;      ///scroll du fond
-    page=load_bitmap("images\\Decor\\background\\Fond.bmp",NULL);
-    clear_bitmap(screen);
-    BITMAP* fond=fondDecor(ancre,screen);   ///fond = bitmap de 10k pixel de long de d�cor
-    BITMAP* bufferColi=fondBuffer(ancre,screen);    ///fond de 10 k pixel de buffer
-    BITMAP* screenBuffer=create_bitmap(800,600);    ///buffer de screen
-    BITMAP* GameOver=load_bitmap("images\\gameover.bmp",NULL);
-
-    if (!GameOver)
+    while(clear==0)
     {
-        allegro_message("pas pu trouver/charger gameover.bmp");
-        allegro_exit();
-        exit(EXIT_FAILURE);
-    }
-
-    if (!page)
-    {
-        allegro_message("pas pu trouver/charger back.bmp");
-        allegro_exit();
-        exit(EXIT_FAILURE);
-    }
-
-
-                            /***** BOUCLE DE JEU *****/
-    while (retour!=1)
-    {
-        int place=0, yes=0;
-
         ///Affichage aleatoire d'ennemis
         if(boss==0)
         {
@@ -89,11 +59,4 @@ void jeu()
         }
         rest(30);
     }
-
-
-    free(ancre);
-    destroy_bitmap(GameOver);
-    destroy_bitmap(page);
-    for(i=0;i<15;i++)
-        destroy_bitmap(ancre->decor[i]);
 }
