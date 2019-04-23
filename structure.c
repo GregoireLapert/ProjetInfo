@@ -35,7 +35,7 @@ void testMort(t_listeActeurs* ancre)
     {
         if(ancre->tabActeur[i]!=NULL)
         {
-            if(ancre->tabActeur[i]->etat==0 || ancre->tabActeur[i]->posx + ancre->tabActeur[i]->tx<0)
+            if(ancre->tabActeur[i]->etat==0 || ancre->tabActeur[i]->posx + ancre->tabActeur[i]->tx<0 || ancre->tabActeur[i]->hp==0)
             {
                 free(ancre->tabActeur[i]);
                 ancre->tabActeur[i]=NULL;

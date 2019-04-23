@@ -69,6 +69,8 @@ void jeu()
             collisionDecor(fond,xFond,ancre);
             Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
             popBoss(xFond,ancre,&boss,6);
+            AffichageBuffer(bufferColi,ancre);
+            collisionTir(bufferColi,ancre);
         }
 
 

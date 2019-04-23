@@ -112,5 +112,7 @@ int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3);
 // en cours de travail
 void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ);
 void TirEnnemi(t_listeActeurs* ancre);
+void AffichageBuffer(BITMAP* buffer,t_listeActeurs* ancre);
+void collisionTir(BITMAP* buffer,t_listeActeurs* ancre);
 
 #endif // PROTO_H_INCLUDED
