@@ -94,12 +94,10 @@ void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ);   ///test et a
 void deplacementPersonnage(t_listeActeurs* ancre);
 void tirPersonnage(t_listeActeurs* ancre);
 void deplacementIntervenant(t_listeActeurs* ancre);
-
 void deplacementEnnemi(t_listeActeurs* ancre);
 
 void jeu();
 /***Decor***/
-
 void recupBitmapDecor(t_listeActeurs *ancre);
 BITMAP* fondDecor(t_listeActeurs *ancre,BITMAP* ancienFond);
 void generateurDecor(t_listeActeurs *ancre);
@@ -110,8 +108,9 @@ void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre);
 void deplacementEnnemi(t_listeActeurs* ancre);
 int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3);
 
-// en cour travail
+
+// en cours de travail
 void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ);
-void TirEnnemie(t_listeActeurs* ancre);
+void TirEnnemi(t_listeActeurs* ancre);
 
 #endif // PROTO_H_INCLUDED

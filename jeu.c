@@ -4,7 +4,7 @@
 void jeu()
 {
     int xPage=0,retour=0,xFond=0;
-    int boss=0;
+    int boss=0,i;
     t_listeActeurs* ancre=creerListe(80);
 
     ///D�claration des bitmap a utiliser
@@ -14,6 +14,14 @@ void jeu()
     BITMAP* fond=fondDecor(ancre,screen);   ///fond = bitmap de 10k pixel de long de d�cor
     BITMAP* bufferColi=fondBuffer(ancre,screen);    ///fond de 10 k pixel de buffer
     BITMAP* screenBuffer=create_bitmap(800,600);    ///buffer de screen
+    BITMAP* GameOver=load_bitmap("images\\gameover.bmp",NULL);
+
+    if (!GameOver)
+    {
+        allegro_message("pas pu trouver/charger gameover.bmp");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
 
     if (!page)
     {
@@ -29,19 +37,21 @@ void jeu()
         int place=0, yes=0;
 
         ///Affichage aleatoire d'ennemis
-        while(yes==0)
+        if(boss==0)
         {
-            place++;
-            yes=PopEnnemis(ancre,place,90,90,200);
+            while(yes==0)
+            {
+                place++;
+                yes=PopEnnemis(ancre,place,90,90,200);
+            }
         }
 
         testMort(ancre);
 
         if(ancre->tabActeur[0]==NULL)
         {
-            rest(10);
-            rectfill(screen,SCREEN_W/2-100,SCREEN_H/2-30,SCREEN_W/2+100,SCREEN_H/2+30,makecol(255,255,255));
-            textprintf_centre_ex(screen,font,SCREEN_W/2,SCREEN_H/2,makecol(0,0,0),-1,"GAME OVER");
+            rest(200);
+            masked_blit(GameOver,screen,0,0,SCREEN_W/2-GameOver->w/2,SCREEN_H/2-GameOver->h/2,GameOver->w,GameOver->h);
 
             while(!key[KEY_SPACE])
             {
@@ -59,7 +69,6 @@ void jeu()
             collisionDecor(fond,xFond,ancre);
             Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
             popBoss(xFond,ancre,&boss,6);
-            TirEnnemie(ancre);
         }
 
 
@@ -85,4 +94,8 @@ void jeu()
 
 
     free(ancre);
+    destroy_bitmap(GameOver);
+    destroy_bitmap(page);
+    for(i=0;i<15;i++)
+        destroy_bitmap(ancre->decor[i]);
 }

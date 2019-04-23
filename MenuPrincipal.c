@@ -147,18 +147,12 @@ void MenuJouer(int*choix)
         exit(EXIT_FAILURE);
     }
 
-    int i;
     int oui=0;
     *choix=0;
 
-    for(i=0;i<2;i++)
-    {
-        ///Effet clignotement
-        AffMP();
-        rest(30);
-        AffMJ();
-        rest(30);
-    }
+    ///Affichage
+    AffMJ();
+    rest(200);
 
     while(*choix==0)
     {
@@ -208,14 +202,7 @@ void MenuJouer(int*choix)
             {
                 play_sample(valider,40,128,1000,0);
                 *choix=-1;
-                for(i=0;i<2;i++)
-                {
-                    ///Effet clignotement
-                    AffMJ();
-                    rest(30);
-                    AffMP();
-                    rest(30);
-                }
+                rest(200);
             }
         }
         else{
@@ -266,16 +253,9 @@ void MenuNiveau(int*choix)
         exit(EXIT_FAILURE);
     }
 
-    int oui=0,i,lock=1;
+    int oui=0,lock=1;
 
-    for(i=0;i<2;i++)
-    {
-        ///Effet clignotement
-        AffMP();
-        rest(30);
-        AffMM();
-        rest(30);
-    }
+    AffMM();
 
     while(lock!=0)
     {
@@ -326,16 +306,10 @@ void MenuNiveau(int*choix)
             if(mouse_b&1)
             {
                 play_sample(valider,40,128,1000,0);
-                for(i=0;i<2;i++)
-                {
-                    ///Effet clignotement
-                    AffMM();
-                    rest(30);
-                    AffMJ();
-                    rest(30);
-                }
                 *choix=0;
                 lock=0;
+                rest(200);
+                AffMJ();
             }
         }
         else{
