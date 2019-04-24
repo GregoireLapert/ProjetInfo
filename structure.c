@@ -18,7 +18,7 @@ t_listeActeurs* creerListe(int maxi)
         nouveau->tabInter[i]=NULL;
     }
 
-    nouveau->tabActeur[0]=constructeurActeur(100,100,1);
+    nouveau->tabActeur[0]=constructeurActeur(100,250,1);
     nouveau->nActeur+=1;
 
     ///Recupere les bitmaps du decor.
@@ -28,7 +28,7 @@ t_listeActeurs* creerListe(int maxi)
 }
 
 ///Supprime les elements hors de l'ecran
-void testMort(t_listeActeurs* ancre)
+void testMort(t_listeActeurs* ancre, int*vieBoss)
 {
     int i=0;
     for(i=0;i<ancre->maxiActeur;i++)
@@ -37,6 +37,8 @@ void testMort(t_listeActeurs* ancre)
         {
             if(ancre->tabActeur[i]->etat==0 || ancre->tabActeur[i]->posx + ancre->tabActeur[i]->tx<0 || ancre->tabActeur[i]->hp<=0)
             {
+                if(ancre->tabActeur[i]->type>=5)
+                    *vieBoss=0;
                 free(ancre->tabActeur[i]);
                 ancre->tabActeur[i]=NULL;
                 ancre->nActeur-=1;

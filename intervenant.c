@@ -58,7 +58,7 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->depy= - rand()%10;
         nouveau->tx=15;
         nouveau->ty=5;
-        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(210,120,120));
+        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,200,0));
         nouveau->degat=1;
         break;
     }

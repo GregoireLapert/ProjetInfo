@@ -81,11 +81,12 @@ void MenuNiveau(int*choix);
 void AffMJ();
 void AffMP();
 void AffMM();
+void tutoriel();
 
 /***Structure***/
 t_acteur* constructeurActeur(int x,int y,int typ);  ///cr�e objet acteur
 t_listeActeurs* creerListe(int maxi);               ///cr�e ancre
-void testMort(t_listeActeurs* ancre);               ///test si etat=0 donc tue
+void testMort(t_listeActeurs* ancre, int*vieBoss);               ///test si etat=0 donc tue
 void ajoutActeur(t_listeActeurs* ancre,int x,int y,int typ);    ///test si peut ajouter acteur et ajoute
 t_intervenant* constructeurIntervenant(int x,int y,int typ);    ///creer objet intervenant
 void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ);   ///test et ajoute intervenant
@@ -97,7 +98,11 @@ void tirPersonnage(t_listeActeurs* ancre, int *xpage);
 void deplacementIntervenant(t_listeActeurs* ancre);
 void deplacementEnnemi(t_listeActeurs* ancre);
 
-void jeu();
+/***Jeu***/
+void jeu(int clear1, int clear2, int clear3);
+int Niveau(int niveau);
+void transition(t_listeActeurs*ancre, BITMAP* page, int xPage);
+
 /***Decor***/
 void recupBitmapDecor(t_listeActeurs *ancre);
 BITMAP* fondDecor(t_listeActeurs *ancre,BITMAP* ancienFond);
