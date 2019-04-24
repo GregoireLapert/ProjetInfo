@@ -31,7 +31,7 @@ void popBonus(int xFond,t_listeActeurs* ancre)
 {
     if(rand()%500==0)
     {
-        ajoutIntervenant(ancre,500,300,rand()%(9-7+1)+7);
+        ajoutIntervenant(ancre,700,300,rand()%(9-7+1)+7);
     }
 }
 
@@ -159,8 +159,7 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
     int cpt=0;
     int i=0;
 
-    /////collision tir////
-     for(i=0;i<ancre->maxiInter;i++)
+  for(i=0;i<ancre->maxiInter;i++)
     {
          if(ancre->tabInter[i]!=NULL)
          {
@@ -187,6 +186,11 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
                                     {
                                        ancre->tabInter[i]->etat=2;
                                     }
+                                    if(ancre->tabActeur[cpt]->etat>=5)
+                                    {
+                                        circlefill(ancre->tabActeur[cpt]->affiche,rand()%(ancre->tabActeur[cpt]->affiche->w),rand()%ancre->tabActeur[cpt]->affiche->h,20,makecol(255,0,255));
+                                    }
+
 
 
 
@@ -209,19 +213,19 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
                                             ancre->tabInter[i]->etat=8;
                                             ancre->tabActeur[0]->depx+=1;
                                             ancre->tabActeur[0]->depy+=1;
-                                            ancre->tabActeur[0]->hp+=0.2;
+                                            ancre->tabActeur[0]->hp+=0.3;
                                         }
                                         if(ancre->tabInter[i]->type==8)
                                         {
                                             ancre->tabInter[i]->etat=8;
                                             ancre->tabActeur[0]->sp=100;
-                                            ancre->tabActeur[0]->hp+=0.2;
+                                            ancre->tabActeur[0]->hp+=0.3;
                                         }
                                         if(ancre->tabInter[i]->type==9)
                                         {
                                             ancre->tabInter[i]->etat=8;
                                             ancre->tabActeur[0]->hp=10;
-                                            ancre->tabActeur[0]->hp+=0.2;
+                                            ancre->tabActeur[0]->hp+=0.3;
                                         }
                              }
 
@@ -233,8 +237,6 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
 
          }
     }
-
-
 
 
 
@@ -288,6 +290,12 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
 
            ancre->tabActeur[0]->hp-=0.1;
         }
+
+
+        /////collision tir////
+
+
+
 
 }
 
