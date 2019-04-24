@@ -27,14 +27,6 @@ int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3)
     return yes;
 }
 
-void popBonus(int xFond,t_listeActeurs* ancre)
-{
-    if(rand()%500==0)
-    {
-        ajoutIntervenant(ancre,500,300,rand()%(9-7+1)+7);
-    }
-}
-
 ///Deplacement ennemis
 void deplacementEnnemi(t_listeActeurs* ancre)
 {
@@ -159,6 +151,8 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
     int cpt=0;
     int i=0;
 
+    SAMPLE*bonus=load_sample("valider1.wav");
+
     /////collision tir////
      for(i=0;i<ancre->maxiInter;i++)
     {
@@ -175,26 +169,21 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
                     {
                         for(cpt=1;cpt<ancre->maxiActeur;cpt++)
                         {
-                        if(ancre->tabActeur[cpt]!=NULL)
-                        {
-                            if(ancre->tabActeur[cpt]->etat!=0)
+                            if(ancre->tabActeur[cpt]!=NULL)
                             {
-                                if(ancre->tabActeur[cpt]->id==gauche || ancre->tabActeur[cpt]->id==droite)
+                                if(ancre->tabActeur[cpt]->etat!=0)
                                 {
-                                    ancre->tabActeur[cpt]->hp-=ancre->tabInter[i]->degat;
-                                    //caler bitmap explosions
-                                    if(ancre->tabInter[i]->type<7)
+                                    if(ancre->tabActeur[cpt]->id==gauche || ancre->tabActeur[cpt]->id==droite)
                                     {
-                                       ancre->tabInter[i]->etat=2;
+                                        ancre->tabActeur[cpt]->hp-=ancre->tabInter[i]->degat;
+                                        //caler bitmap explosions
+                                        if(ancre->tabInter[i]->type<7)
+                                        {
+                                           ancre->tabInter[i]->etat=2;
+                                        }
                                     }
-
-
-
                                 }
                             }
-
-                        }
-
                         }
                     }
                 }
@@ -202,94 +191,76 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
                 {
                     if(gauche==makecol(0,255,0) || droite==makecol(0,255,0))
                     {
-                       ancre->tabActeur[0]->hp-=ancre->tabInter[i]->degat;
-                       ancre->tabInter[i]->etat=2;
-                                        if(ancre->tabInter[i]->type==7)
-                                        {
-                                            ancre->tabInter[i]->etat=8;
-                                            ancre->tabActeur[0]->depx+=1;
-                                            ancre->tabActeur[0]->depy+=1;
-                                            ancre->tabActeur[0]->hp+=0.2;
-                                        }
-                                        if(ancre->tabInter[i]->type==8)
-                                        {
-                                            ancre->tabInter[i]->etat=8;
-                                            ancre->tabActeur[0]->sp=100;
-                                            ancre->tabActeur[0]->hp+=0.2;
-                                        }
-                                        if(ancre->tabInter[i]->type==9)
-                                        {
-                                            ancre->tabInter[i]->etat=8;
-                                            ancre->tabActeur[0]->hp=10;
-                                            ancre->tabActeur[0]->hp+=0.2;
-                                        }
-                             }
-
-
+                        ancre->tabActeur[0]->hp-=ancre->tabInter[i]->degat;
+                        ancre->tabInter[i]->etat=2;
+                        if(ancre->tabInter[i]->type==7)
+                        {
+                            ancre->tabInter[i]->etat=8;
+                            ancre->tabActeur[0]->depx+=1;
+                            ancre->tabActeur[0]->depy+=1;
+                            play_sample(bonus,40,128,1000,0);
+                        }
+                        if(ancre->tabInter[i]->type==8)
+                        {
+                            ancre->tabInter[i]->etat=8;
+                            ancre->tabActeur[0]->sp=100;
+                            play_sample(bonus,40,128,1000,0);
+                        }
+                        if(ancre->tabInter[i]->type==9)
+                        {
+                            ancre->tabInter[i]->etat=8;
+                            ancre->tabActeur[0]->hp=10;
+                            play_sample(bonus,40,128,1000,0);
+                        }
+                     }
                        //caler bitmap explosions
-                    }
                 }
-
-
-         }
+            }
+        }
     }
 
 
 
 
 
+        //collision entre ennemi
 
-
-    //collison entre ennemi
-
-        if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy)!=16711935)
+        if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy)!=16711935 && getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy)!=makecol(0,0,255))
         {
-
            ancre->tabActeur[0]->hp-=0.1;
         }
-
-        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy-5)!=16711935)
+        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy-5)!=16711935 && getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy-5)!=makecol(0,0,255))
         {
-
            ancre->tabActeur[0]->hp-=0.1;
         }
-        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy)!=16711935)
+        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy)!=16711935 && getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy)!=makecol(0,0,255))
         {
-
            ancre->tabActeur[0]->hp-=0.1;
         }
                 // fin
             // debut de en bas
-        if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
+        if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935 && getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=makecol(0,0,255))
         {
-
             ancre->tabActeur[0]->hp-=0.1;
         }
-        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
-                {
-
-                   ancre->tabActeur[0]->hp-=0.1;
-
-                }
-        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935)
+        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935 && getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx/2,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=makecol(0,0,255))
         {
-
+           ancre->tabActeur[0]->hp-=0.1;
+        }
+        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=16711935 && getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty+5)!=makecol(0,0,255))
+        {
            ancre->tabActeur[0]->hp-=0.1;
         }
                //fin pts du bas
             //debut du millieu cot�
-        if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=16711935)
+        if(getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=16711935 && getpixel(buffer,ancre->tabActeur[0]->posx-5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=makecol(0,0,255))
         {
-
            ancre->tabActeur[0]->hp-=0.1;
         }
-        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=makecol(255,0,255))
+        if(getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=makecol(255,0,255) && getpixel(buffer,ancre->tabActeur[0]->posx+ancre->tabActeur[0]->tx+5,ancre->tabActeur[0]->posy+ancre->tabActeur[0]->ty/2)!=makecol(0,0,255))
         {
-
            ancre->tabActeur[0]->hp-=0.1;
         }
 
+    destroy_bitmap(bonus);
 }
-
-
-

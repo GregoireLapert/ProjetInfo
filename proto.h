@@ -100,8 +100,8 @@ void deplacementIntervenant(t_listeActeurs* ancre);
 void deplacementEnnemi(t_listeActeurs* ancre);
 
 /***Jeu***/
-void jeu(int clear1, int clear2, int clear3);
-int Niveau(int niveau);
+void jeu(int clear1, int clear2, int clear3, int boss);
+int Niveau(int niveau, int xFond);
 void transition(t_listeActeurs*ancre, BITMAP* page, int xPage);
 
 /***Decor***/

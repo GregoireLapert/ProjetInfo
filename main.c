@@ -49,18 +49,32 @@ int main()
         ///Jeu
         else if(choix==4)
         {
-            tutoriel();
-            jeu(0,0,0);
+            jeu(0,0,0,0);
             choix=-1;
         }
         else if(choix==5)
         {
-            jeu(1,0,0);
+            jeu(1,0,0,0);
             choix=-1;
         }
         else if(choix==6)
         {
-            jeu(1,1,0);
+            jeu(1,1,0,0);
+            choix=-1;
+        }
+        else if(choix==41)
+        {
+            jeu(0,0,0,9300);
+            choix=-1;
+        }
+        else if(choix==51)
+        {
+            jeu(1,0,0,9300);
+            choix=-1;
+        }
+        else if(choix==61)
+        {
+            jeu(1,1,0,9300);
             choix=-1;
         }
         else MenuPrincipal(&choix);

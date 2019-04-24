@@ -1,18 +1,18 @@
 #include "proto.h"
 #include <allegro.h>
 
-void jeu(int clear1, int clear2, int clear3)
+void jeu(int clear1, int clear2, int clear3, int boss)
 {
     int retour=0;
                             /***** BOUCLE DE JEU *****/
     while (retour!=1)
     {
         if(clear1==0)
-            clear1=Niveau(1);
+            clear1=Niveau(1,boss);
         if(clear1==1 && clear2==0)
-            clear2=Niveau(2);
+            clear2=Niveau(2,boss);
         if(clear2==1)
-            clear3=Niveau(3);
+            clear3=Niveau(3,boss);
         if(clear3==1)
             retour=1;
         if(clear1==-1 || clear2==-1 || clear3==-1)

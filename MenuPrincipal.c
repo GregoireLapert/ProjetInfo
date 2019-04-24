@@ -169,6 +169,7 @@ void MenuJouer(int*choix)
             if(mouse_b&1)
             {
                 play_sample(valider,40,128,1000,0);
+                tutoriel();
                 *choix=4;
             }
         }
@@ -347,6 +348,23 @@ void MenuNiveau(int*choix)
                 clear_to_color(texte2,makecol(255,0,255));
                 oui=0;
             }
+        }
+
+        ///Cheatcodes boss
+        if(key[KEY_1])
+        {
+            *choix=41;
+            lock=0;
+        }
+        else if(key[KEY_2])
+        {
+            *choix=51;
+            lock=0;
+        }
+        else if(key[KEY_3])
+        {
+            *choix=61;
+            lock=0;
         }
     }
     destroy_bitmap(texte);
