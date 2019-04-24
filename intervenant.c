@@ -96,7 +96,16 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         break;
     }
 
-    nouveau->collision=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
+    if(!nouveau->affiche)
+    {
+        allegro_message("N'a pas pu trouver un intervenant.");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
+
+    if(nouveau->type<7 || nouveau->type==10)
+        nouveau->collision=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
+    else nouveau->collision=objet(nouveau->tx,nouveau->ty,makecol(0,0,255));
 
     return nouveau;
 }
@@ -127,11 +136,8 @@ void deplacementIntervenant(t_listeActeurs* ancre)
     {
         if(ancre->tabInter[i]!=NULL )
         {
-
             ancre->tabInter[i]->posx+=ancre->tabInter[i]->depx;
             ancre->tabInter[i]->posy+=ancre->tabInter[i]->depy;
-
-
         }
         else
         {
@@ -141,5 +147,13 @@ void deplacementIntervenant(t_listeActeurs* ancre)
                     compteur++;
             }
         }
+    }
+}
+
+void popBonus(int xFond,t_listeActeurs* ancre)
+{
+    if(xFond%800==0)
+    {
+        ajoutIntervenant(ancre,SCREEN_W,rand()%(349)+100,rand()%(9-7+1)+7);
     }
 }

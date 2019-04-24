@@ -1,9 +1,9 @@
 #include "proto.h"
 
-int Niveau(int niveau)
+int Niveau(int niveau, int xFond)
 {
     int clear=0;
-    int xPage=0,xFond=0;
+    int xPage=0;
     int boss=0,i;
     int TypeBoss,vieBoss=1;
     t_listeActeurs* ancre=creerListe(80);
