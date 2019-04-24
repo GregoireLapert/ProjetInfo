@@ -86,6 +86,14 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->affiche=load_bitmap("images\\health.bmp",NULL);
         nouveau->degat=0;
         break;
+        case 10://lance flammes boss3
+        nouveau->depx=-10;
+        nouveau->depy=-rand()%8 +6;
+        nouveau->tx=40;
+        nouveau->ty=10;
+        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
+        nouveau->degat=20;
+        break;
     }
 
     nouveau->collision=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));

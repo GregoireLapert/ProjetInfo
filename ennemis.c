@@ -121,6 +121,19 @@ void TirEnnemi (t_listeActeurs *ancre)
 
                 }
             }
+             ///Recherche et attaque boss 3
+            else if(ancre->tabActeur[i]->type==7)
+            {
+                if(rand()%5==1)
+                {
+                    for(a=0;a<2;a++)
+                    {
+                        ajoutIntervenant(ancre,ancre->tabActeur[i]->posx+ancre->tabActeur[i]->tx/2,ancre->tabActeur[i]->posy+ancre->tabActeur[i]->ty/2,10);
+                        ajoutIntervenant(ancre,ancre->tabActeur[i]->posx+ancre->tabActeur[i]->tx/2,ancre->tabActeur[i]->posy+ancre->tabActeur[i]->ty/2,3);
+                    }
+
+                }
+            }
         }
     }
 }
