@@ -13,17 +13,17 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
     case 1: ///laser de base
         nouveau->depx=20;
         nouveau->depy=0;
-        nouveau->tx=15;
-        nouveau->ty=2;
-        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
+        nouveau->tx=40;
+        nouveau->ty=5;
+        nouveau->affiche=load_bitmap("laser ami.bmp",NULL);
         nouveau->degat=5;
         break;
     case 2: ///missile
         nouveau->depx=5;
         nouveau->depy=rand()%5-2;
-        nouveau->tx=30;
+        nouveau->tx=39;
         nouveau->ty=10;
-        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,165,0));
+        nouveau->affiche=load_bitmap("missile ami.bmp",NULL);
         nouveau->degat=10;
         break;
    case 3://laser boss1
@@ -48,17 +48,17 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->depx=-20;
         nouveau->depy=0;
         nouveau->tx=15;
-        nouveau->ty=3;
-        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(0,210,220));
+        nouveau->ty=1;
+        nouveau->affiche=load_bitmap("laserennemi.bmp",NULL);
         nouveau->degat=1;
         break;
 
     case 6: ///Missile reserve aux tourelles!!!!!!!!!!
         nouveau->depx=-9;
         nouveau->depy= - rand()%10;
-        nouveau->tx=15;
-        nouveau->ty=5;
-        nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,200,0));
+        nouveau->tx=40;
+        nouveau->ty=18;
+        nouveau->affiche=load_bitmap("missileennemi.bmp",NULL);
         nouveau->degat=1;
         break;
     }

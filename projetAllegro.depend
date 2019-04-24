@@ -145,11 +145,11 @@
 1556059300 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\ennemis.c
 	"proto.h"
 
-1556026505 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\menuprincipal.c
+1556096204 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\menuprincipal.c
 	"proto.h"
 	<allegro.h>
 
-1556036095 c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\proto.h
+1556119065 c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\proto.h
 	<allegro.h>
 	<stdlib.h>
 	<stdio.h>
@@ -160,36 +160,37 @@
 	<allegro.h>
 	<time.h>
 
-1556026529 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\allegro.c
+1556119065 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\allegro.c
 	"proto.h"
 	<allegro.h>
 
-1555948191 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\decors.c
+1556118636 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\decors.c
 	"proto.h"
 
-1556036581 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\ennemis.c
+1556118636 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\ennemis.c
 	"proto.h"
 
-1556036095 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\intervenant.c
+1556123582 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\intervenant.c
 	"proto.h"
 
-1556033632 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\jeu.c
+1556118424 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\jeu.c
 	"proto.h"
 	<allegro.h>
 
-1555855267 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\main.c
-	"proto.h"
+1556096204 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\main.c
 	<allegro.h>
+	<time.h>
+	"proto.h"
 
 1555881940 
 	<allegro.h>
 	<time.h>
 	"proto.h"
 
-1556036095 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\structure.c
+1556118636 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\structure.c
 	"proto.h"
 
-1556036797 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\acteur.c
+1556117861 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\acteur.c
 	"proto.h"
 
 1556117862 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\decors.c
@@ -205,5 +206,8 @@
 	"proto.h"
 
 1556117845 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\niveaux.c
+	"proto.h"
+
+1556117861 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\niveaux.c
 	"proto.h"
 
