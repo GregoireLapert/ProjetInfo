@@ -61,6 +61,31 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,200,0));
         nouveau->degat=1;
         break;
+
+    case 7://bonus vitesse
+        nouveau->depx=-5;
+        nouveau->depy=0;
+        nouveau->tx=40;
+        nouveau->ty=41;
+        nouveau->affiche=load_bitmap("images\\speed.bmp",NULL);
+        nouveau->degat=0;
+        break;
+    case 8:// bonus sp
+        nouveau->depx=-5;
+        nouveau->depy=0;
+        nouveau->tx=40;
+        nouveau->ty=1;
+        nouveau->affiche=load_bitmap("images\\plusmissils.bmp",NULL);
+        nouveau->degat=0;
+        break;
+    case 9://bonus hp
+        nouveau->depx=-5;
+        nouveau->depy=0;
+        nouveau->tx=40;
+        nouveau->ty=41;
+        nouveau->affiche=load_bitmap("images\\health.bmp",NULL);
+        nouveau->degat=0;
+        break;
     }
 
     nouveau->collision=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));

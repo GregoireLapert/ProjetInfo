@@ -111,6 +111,7 @@ int Niveau(int niveau)
             popBoss(xFond,ancre,&boss,TypeBoss);
             AffichageBuffer(bufferColi,ancre);
             collisionTir(bufferColi,ancre);
+            popBonus(xFond,ancre);
         }
 
 

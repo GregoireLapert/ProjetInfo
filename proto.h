@@ -122,6 +122,6 @@ void TirEnnemi(t_listeActeurs* ancre);
 void AffichageBuffer(BITMAP* buffer,t_listeActeurs* ancre);
 void collisionTir(BITMAP* buffer,t_listeActeurs* ancre);//
 void exploInter(t_listeActeurs* ancre,BITMAP** tab,BITMAP* screenBuffer);
-BITMAP** chargerExplosion();
+void popBonus(int xFond,t_listeActeurs* ancre);
 
 #endif // PROTO_H_INCLUDED

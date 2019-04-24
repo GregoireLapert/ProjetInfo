@@ -27,6 +27,14 @@ int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3)
     return yes;
 }
 
+void popBonus(int xFond,t_listeActeurs* ancre)
+{
+    if(rand()%500==0)
+    {
+        ajoutIntervenant(ancre,500,300,rand()%(9-7+1)+7);
+    }
+}
+
 ///Deplacement ennemis
 void deplacementEnnemi(t_listeActeurs* ancre)
 {
@@ -175,7 +183,12 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
                                 {
                                     ancre->tabActeur[cpt]->hp-=ancre->tabInter[i]->degat;
                                     //caler bitmap explosions
-                                    ancre->tabInter[i]->etat=2;
+                                    if(ancre->tabInter[i]->type<7)
+                                    {
+                                       ancre->tabInter[i]->etat=2;
+                                    }
+
+
 
                                 }
                             }
@@ -191,6 +204,28 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
                     {
                        ancre->tabActeur[0]->hp-=ancre->tabInter[i]->degat;
                        ancre->tabInter[i]->etat=2;
+                                        if(ancre->tabInter[i]->type==7)
+                                        {
+                                            ancre->tabInter[i]->etat=8;
+                                            ancre->tabActeur[0]->depx+=1;
+                                            ancre->tabActeur[0]->depy+=1;
+                                            ancre->tabActeur[0]->hp+=0.2;
+                                        }
+                                        if(ancre->tabInter[i]->type==8)
+                                        {
+                                            ancre->tabInter[i]->etat=8;
+                                            ancre->tabActeur[0]->sp=100;
+                                            ancre->tabActeur[0]->hp+=0.2;
+                                        }
+                                        if(ancre->tabInter[i]->type==9)
+                                        {
+                                            ancre->tabInter[i]->etat=8;
+                                            ancre->tabActeur[0]->hp=10;
+                                            ancre->tabActeur[0]->hp+=0.2;
+                                        }
+                             }
+
+
                        //caler bitmap explosions
                     }
                 }
@@ -203,7 +238,7 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
 
 
 
-    }
+
 
     //collison entre ennemi
 
