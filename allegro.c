@@ -50,15 +50,10 @@ void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* f
          {
              if(ancre->tabActeur[i]->etat!=0)
              {
-                 if(ancre->tabActeur[i]->type>=5)
-                 {
-                     masked_blit(ancre->tabActeur[i]->BOSS,screenBuffer,0,0,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy,ancre->tabActeur[i]->tx,ancre->tabActeur[i]->ty);
-                     masked_blit(ancre->tabActeur[i]->affiche,screenBuffer,0,0,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy,ancre->tabActeur[i]->tx,ancre->tabActeur[i]->ty);
-                 }
-                 else
-                 {
-                     masked_blit(ancre->tabActeur[i]->affiche,screenBuffer,0,0,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy,ancre->tabActeur[i]->tx,ancre->tabActeur[i]->ty);
-                 }
+
+
+                masked_blit(ancre->tabActeur[i]->affiche,screenBuffer,0,0,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy,ancre->tabActeur[i]->tx,ancre->tabActeur[i]->ty);
+
 
              }
 

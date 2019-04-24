@@ -23,8 +23,7 @@ float hp;         ///pts de vie acteur
 float sp;       ///pts �nergie acteur en pourcent
 int id;         ///correspond au makecol du buffer de collision
 int etat;       ///0=mort 1=vie
-BITMAP* affiche;
-BITMAP* BOSS;        ///a remplacer par un tableau de bitmap* si animation
+BITMAP* affiche;       ///a remplacer par un tableau de bitmap* si animation
 BITMAP* collision;
 int tx;         ///taille =>facilite collision
 int ty;

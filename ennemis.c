@@ -186,10 +186,6 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
                                     {
                                        ancre->tabInter[i]->etat=2;
                                     }
-                                    if(ancre->tabActeur[cpt]->etat>=5)
-                                    {
-                                        circlefill(ancre->tabActeur[cpt]->affiche,rand()%(ancre->tabActeur[cpt]->affiche->w),rand()%ancre->tabActeur[cpt]->affiche->h,20,makecol(255,0,255));
-                                    }
 
 
 
