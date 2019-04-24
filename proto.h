@@ -50,6 +50,7 @@ typedef struct listeActeurs
 {
     /// nombre maxi d'�l�ments = taille du tableau de pointeurs
     int maxiActeur;
+    BITMAP* explo[9];
 
     ///nombre effectif de pointeurs utilis�s
     ///(les autres sont � NULL)
@@ -104,7 +105,7 @@ BITMAP* fondDecor(t_listeActeurs *ancre,BITMAP* ancienFond);
 void generateurDecor(t_listeActeurs *ancre);
 BITMAP *fondBuffer(t_listeActeurs* ancre,BITMAP* ancienFond);
 void creerDecor(t_listeActeurs* ancre,BITMAP* fond,BITMAP* buffer);
-void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre);
+void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre,BITMAP** tab);
 void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre);
 void deplacementEnnemi(t_listeActeurs* ancre);
 int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3);
@@ -114,6 +115,8 @@ int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3);
 void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ);
 void TirEnnemi(t_listeActeurs* ancre);
 void AffichageBuffer(BITMAP* buffer,t_listeActeurs* ancre);
-void collisionTir(BITMAP* buffer,t_listeActeurs* ancre);
+void collisionTir(BITMAP* buffer,t_listeActeurs* ancre);//
+void exploInter(t_listeActeurs* ancre,BITMAP** tab,BITMAP* screenBuffer);
+BITMAP** chargerExplosion();
 
 #endif // PROTO_H_INCLUDED
