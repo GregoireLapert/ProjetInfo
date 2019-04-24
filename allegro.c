@@ -12,7 +12,7 @@ BITMAP* objet(int tx,int ty,int couleur)
 }
 
 ///Affichage
-void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre,BITMAP** explo)
+void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre)
 {
     int i=0;
 
@@ -64,7 +64,7 @@ void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* f
              {
                  ancre->tabInter[i]->depx=0;
                  ancre->tabInter[i]->depy=0;
-                  masked_blit(explo[(ancre->tabInter[i]->etat)-2],screenBuffer,0,0,ancre->tabInter[i]->posx,ancre->tabInter[i]->posy,explo[(ancre->tabInter[i]->etat)-2]->w,explo[(ancre->tabInter[i]->etat)-2]->h);
+                  masked_blit(ancre->explo[(ancre->tabInter[i]->etat)-2],screenBuffer,0,0,ancre->tabInter[i]->posx,ancre->tabInter[i]->posy,ancre->explo[(ancre->tabInter[i]->etat)-2]->w,ancre->explo[(ancre->tabInter[i]->etat)-2]->h);
                   ancre->tabInter[i]->etat+=1;
              }
          }
