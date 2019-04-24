@@ -3,29 +3,13 @@
 
 /***** Cette page contient tous les ssprgs du menu *****/
 
-void MenuPrincipal(int*choix)
+void MenuPrincipal(int*choix, SAMPLE*bouton, SAMPLE*valider)
 {
     BITMAP*texte=create_bitmap(SCREEN_W,SCREEN_H);
     BITMAP*texte2=create_bitmap(SCREEN_W,SCREEN_H);
     BITMAP*buffer=create_bitmap(SCREEN_W,SCREEN_H);
     clear_to_color(texte,makecol(255,0,255));
     clear_to_color(texte2,makecol(255,0,255));
-
-    SAMPLE*bouton=load_sample("bouton1.wav");
-    SAMPLE*valider=load_sample("valider1.wav");
-
-    if(!bouton)
-    {
-        allegro_message("N'a pas pu trouver bouton1.wav");
-        allegro_exit();
-        exit(EXIT_FAILURE);
-    }
-    if(!valider)
-    {
-        allegro_message("N'a pas pu trouver valider1.wav");
-        allegro_exit();
-        exit(EXIT_FAILURE);
-    }
 
     *choix=0;
     int oui=0;
@@ -119,40 +103,164 @@ void MenuPrincipal(int*choix)
     destroy_bitmap(texte2);
     destroy_bitmap(texte);
     destroy_bitmap(buffer);
-    destroy_sample(bouton);
 }
 
-void MenuJouer(int*choix)
+void Options(int*choix, SAMPLE*music, SAMPLE*bouton, SAMPLE*valider, int* volume, int* son)
 {
-    BITMAP*fond=load_bitmap("fondoui.bmp",NULL);
+    BITMAP*fond=load_bitmap("fondmenu.bmp",NULL);
     BITMAP*texte=create_bitmap(SCREEN_W,SCREEN_H);
     BITMAP*texte2=create_bitmap(SCREEN_W,SCREEN_H);
     BITMAP*buffer=create_bitmap(SCREEN_W,SCREEN_H);
     clear_to_color(texte,makecol(255,0,255));
     clear_to_color(texte2,makecol(255,0,255));
 
-    SAMPLE*bouton=load_sample("bouton1.wav");
-    SAMPLE*valider=load_sample("valider1.wav");
+    if(!fond)
+    {
+        allegro_message("N'a pas pu charger fondmenu.bmp");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
 
-    if(!bouton)
+    *choix=0;
+    int oui=0,i;
+    int onoff=1;
+
+    blit(fond,screen,100,0,0,0,fond->w,fond->h);
+
+    textprintf_ex(texte,font,205/2.5,90/2.5,makecol(255,255,255),-1,"OPTIONS");
+    stretch_blit(texte,texte2,0,0,texte->w,texte->h,0,0,texte->w*1.5,texte->h*1.5);
+    textprintf_ex(texte2,font,200/2,220/2,makecol(255,255,255),-1,"MUSIQUE : ON/OFF");
+    textprintf_ex(texte2,font,200/2,280/2,makecol(255,255,255),-1,"VOLUME");
+    textprintf_ex(texte2,font,270/2,340/2,makecol(255,255,255),-1,"RETOUR");
+    stretch_blit(texte2,buffer,0,0,texte->w,texte->h,0,0,buffer->w*2.5,buffer->h*2.5);
+    draw_sprite(screen,buffer,0,0);
+    clear_to_color(texte,makecol(255,0,255));
+    clear_to_color(texte2,makecol(255,0,255));
+
+    rest(300);
+
+    while(*choix==0)
     {
-        allegro_message("N'a pas pu trouver bouton1.wav");
-        allegro_exit();
-        exit(EXIT_FAILURE);
+        for(i=0;i<*volume;i++)
+            rectfill(screen,400+30*i,348,420+30*i,368,makecol(220,149,255));
+        for(i=*volume;i<5;i++)
+            rectfill(screen,400+30*i,348,420+30*i,368,makecol(255,255,255));
+
+        if(mouse_x>260 && mouse_x<570 && mouse_y>270 && mouse_y<300)
+        {
+            if(oui==0)
+            {
+                play_sample(bouton,40,128,1000,0);
+                textprintf_ex(texte2,font,200/2,220/2,makecol(220,140,255),-1,"MUSIQUE : ON/OFF");
+                stretch_blit(texte2,buffer,0,0,texte->w,texte->h,0,0,buffer->w*2.5,buffer->h*2.5);
+                draw_sprite(screen,buffer,0,0);
+                oui=1;
+            }
+            if(mouse_b&1)
+            {
+                play_sample(valider,40,128,1000,0);
+                rest(100);
+                if(onoff==1)
+                {
+                    stop_sample(music);
+                    onoff=0;
+                }
+                else
+                {
+                    play_sample(music,*son,128,1000,10);
+                    onoff=1;
+                }
+            }
+        }
+        else if(mouse_x>260 && mouse_x<570 && mouse_y>348 && mouse_y<368)
+        {
+            if(mouse_b&1)
+            {
+                play_sample(valider,40,128,1000,0);
+                stop_sample(music);
+
+                if(mouse_x>400 && mouse_x<420)
+                {
+                    *volume=1;
+                    *son=6;
+                }
+                else if(mouse_x>430 && mouse_x<450)
+                {
+                    *volume=2;
+                    *son=13;
+                }
+                else if(mouse_x>460 && mouse_x<480)
+                {
+                    *volume=3;
+                    *son=20;
+                }
+                else if(mouse_x>490 && mouse_x<510)
+                {
+                    *volume=4;
+                    *son=27;
+                }
+                else if(mouse_x>520 && mouse_x<550)
+                {
+                    *volume=5;
+                    *son=32;
+                }
+                play_sample(music,*son,128,1000,10);
+
+                rest(100);
+            }
+        }
+        else if(mouse_x>340 && mouse_x<470 && mouse_y>420 && mouse_y<450)
+        {
+            if(oui==0)
+            {
+                play_sample(bouton,40,128,1000,0);
+                textprintf_ex(texte2,font,270/2,340/2,makecol(220,140,255),-1,"RETOUR");
+                stretch_blit(texte2,buffer,0,0,texte->w,texte->h,0,0,buffer->w*2.5,buffer->h*2.5);
+                draw_sprite(screen,buffer,0,0);
+                oui=3;
+            }
+            if(mouse_b&1)
+            {
+                play_sample(valider,40,128,1000,0);
+                *choix=-1;
+                rest(200);
+            }
+        }
+        else{
+            if(oui==1)
+                textprintf_ex(texte2,font,200/2,220/2,makecol(255,255,255),-1,"MUSIQUE : ON/OFF");
+            else if(oui==3)
+                textprintf_ex(texte2,font,270/2,340/2,makecol(255,255,255),-1,"RETOUR");
+            if(oui!=0)
+            {
+                stretch_blit(texte2,buffer,0,0,texte->w,texte->h,0,0,buffer->w*2.5,buffer->h*2.5);
+                draw_sprite(screen,buffer,0,0);
+                clear_to_color(texte,makecol(255,0,255));
+                clear_to_color(texte2,makecol(255,0,255));
+                oui=0;
+            }
+        }
     }
-    if(!valider)
-    {
-        allegro_message("N'a pas pu trouver valider1.wav");
-        allegro_exit();
-        exit(EXIT_FAILURE);
-    }
+    destroy_bitmap(fond);
+    destroy_bitmap(texte2);
+    destroy_bitmap(texte);
+    destroy_bitmap(buffer);
+}
+
+void MenuJouer(int*choix, SAMPLE*bouton, SAMPLE*valider)
+{
+    BITMAP*texte=create_bitmap(SCREEN_W,SCREEN_H);
+    BITMAP*texte2=create_bitmap(SCREEN_W,SCREEN_H);
+    BITMAP*buffer=create_bitmap(SCREEN_W,SCREEN_H);
+    clear_to_color(texte,makecol(255,0,255));
+    clear_to_color(texte2,makecol(255,0,255));
 
     int oui=0;
     *choix=0;
 
     ///Affichage
     AffMJ();
-    rest(200);
+    rest(400);
 
     while(*choix==0)
     {
@@ -186,7 +294,7 @@ void MenuJouer(int*choix)
             if(mouse_b&1)
             {
                 play_sample(valider,40,128,1000,0);
-                MenuNiveau(choix);
+                MenuNiveau(choix,bouton,valider);
             }
         }
         else if(mouse_x>340 && mouse_x<470 && mouse_y>420 && mouse_y<450)
@@ -223,14 +331,12 @@ void MenuJouer(int*choix)
             }
         }
     }
-    destroy_bitmap(fond);
     destroy_bitmap(texte2);
     destroy_bitmap(texte);
     destroy_bitmap(buffer);
-    destroy_sample(bouton);
 }
 
-void MenuNiveau(int*choix)
+void MenuNiveau(int*choix, SAMPLE*bouton, SAMPLE*valider)
 {
     BITMAP*texte=create_bitmap(SCREEN_W,SCREEN_H);
     BITMAP*texte2=create_bitmap(SCREEN_W,SCREEN_H);
@@ -238,26 +344,10 @@ void MenuNiveau(int*choix)
     clear_to_color(texte,makecol(255,0,255));
     clear_to_color(texte2,makecol(255,0,255));
 
-    SAMPLE*bouton=load_sample("bouton1.wav");
-    SAMPLE*valider=load_sample("valider1.wav");
-
-    if(!bouton)
-    {
-        allegro_message("N'a pas pu trouver bouton1.wav");
-        allegro_exit();
-        exit(EXIT_FAILURE);
-    }
-    if(!valider)
-    {
-        allegro_message("N'a pas pu trouver valider1.wav");
-        allegro_exit();
-        exit(EXIT_FAILURE);
-    }
-
     int oui=0,lock=1;
 
     AffMM();
-    rest(200);
+    rest(400);
 
     while(lock!=0)
     {
@@ -370,7 +460,6 @@ void MenuNiveau(int*choix)
     destroy_bitmap(texte);
     destroy_bitmap(texte2);
     destroy_bitmap(buffer);
-    destroy_sample(bouton);
 }
 
 void AffMJ()
@@ -425,7 +514,7 @@ void AffMP()
 
     blit(fond,screen,100,0,0,0,fond->w,fond->h);
 
-    textprintf_ex(texte,font,220/2.5,90/2.5,makecol(255,255,255),-1,"TITRE");
+    textprintf_ex(texte,font,195/2.5,90/2.5,makecol(255,255,255),-1,"AGC-TYPE");
     stretch_blit(texte,texte2,0,0,texte->w,texte->h,0,0,texte->w*1.5,texte->h*1.5);
     textprintf_ex(texte2,font,285/2,220/2,makecol(255,255,255),-1,"JOUER");
     textprintf_ex(texte2,font,270/2,280/2,makecol(255,255,255),-1,"OPTIONS");

@@ -7,6 +7,8 @@ int Niveau(int niveau, int xFond)
     int boss=0,i;
     int TypeBoss,vieBoss=1;
     t_listeActeurs* ancre=creerListe(80);
+    ///Son bonus
+    SAMPLE*bonus=load_sample("valider1.wav");
 
     ///D�claration des bitmap a utiliser
 
@@ -110,7 +112,7 @@ int Niveau(int niveau, int xFond)
             Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
             popBoss(xFond,ancre,&boss,TypeBoss);
             AffichageBuffer(bufferColi,ancre);
-            collisionTir(bufferColi,ancre);
+            collisionTir(bufferColi,ancre,bonus);
             popBonus(xFond,ancre);
         }
 
@@ -142,9 +144,7 @@ int Niveau(int niveau, int xFond)
     destroy_bitmap(page);
     for(i=0;i<15;i++)
         destroy_bitmap(ancre->decor[i]);
-    ///Ca fait bug :c
-//    for(i=0;i<ancre->maxiActeur;i++)
-//        destroy_bitmap(ancre->tabActeur[i]->affiche);
+    destroy_sample(bonus);
     free(ancre);
 
     return clear;
@@ -187,5 +187,6 @@ void transition(t_listeActeurs*ancre, BITMAP* page, int xPage)
     rest(10);
     clear_bitmap(screen);
     rest(100);
+    destroy_bitmap(screenBuffer);
 }
 

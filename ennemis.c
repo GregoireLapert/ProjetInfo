@@ -157,14 +157,12 @@ void AffichageBuffer(BITMAP* buffer,t_listeActeurs* ancre)
 
 }
 
-void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
+void collisionTir(BITMAP* buffer,t_listeActeurs* ancre, SAMPLE*bonus)
 {
     int gauche=0;
     int droite=0;
     int cpt=0;
     int i=0;
-
-    SAMPLE*bonus=load_sample("valider1.wav");
 
     /////collision tir////
      for(i=0;i<ancre->maxiInter;i++)
@@ -274,6 +272,4 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
         {
            ancre->tabActeur[0]->hp-=0.1;
         }
-
-    destroy_bitmap(bonus);
 }

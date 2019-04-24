@@ -72,18 +72,21 @@ void tutoriel()
 
     clear_bitmap(screen);
 
-    textprintf_centre_ex(texte,font,SCREEN_W/(2*1.5),50,makecol(255,255,255),-1,"COMMANDES");
-    textprintf_ex(texte,font,180,135,makecol(255,255,255),-1,"Utiliser les fleches directionnelles");
-    textprintf_ex(texte,font,180,155,makecol(255,255,255),-1,"pour se deplacer");
-    textprintf_ex(texte,font,180,220,makecol(255,255,255),-1,"Appuyer sur espace pour tirer vos lasers");
-    textprintf_ex(texte,font,180,290,makecol(255,255,255),-1,"Appuyer sur W pour utiliser des missiles");
+    textprintf_centre_ex(texte,font,SCREEN_W/(2*1.5),120,makecol(255,255,255),-1,"COMMANDES");
+    textprintf_ex(texte,font,180,180,makecol(255,255,255),-1,"Utiliser les flèches directionnelles");
+    textprintf_ex(texte,font,180,200,makecol(255,255,255),-1,"pour se déplacer");
+    textprintf_ex(texte,font,180,260,makecol(255,255,255),-1,"Appuyer sur espace pour tirer vos lasers");
+    textprintf_ex(texte,font,180,320,makecol(255,255,255),-1,"Appuyer sur W pour utiliser des missiles");
 
     stretch_blit(texte,screen,0,0,texte->w,texte->h,0,0,texte->w*1.5,texte->h*1.5);
 
-    masked_blit(fleches,screen,0,0,70,145,fleches->w,fleches->h);
-    masked_blit(espace,screen,0,0,70,265,espace->w,espace->h);
-    masked_blit(touchew,screen,0,0,115,410,touchew->w,touchew->h);
+    masked_blit(fleches,screen,0,0,70,220,fleches->w,fleches->h);
+    masked_blit(espace,screen,0,0,70,320,espace->w,espace->h);
+    masked_blit(touchew,screen,0,0,115,450,touchew->w,touchew->h);
 
+    textprintf_centre_ex(screen,font,SCREEN_W/2,60,makecol(255,255,255),-1,"A cause de la pollution, l'atmosphère s'est trouée. En plus de laisser passer");
+    textprintf_centre_ex(screen,font,SCREEN_W/2,80,makecol(255,255,255),-1,"les astéroïdes, divers mutations ont été repérées.");
+    textprintf_centre_ex(screen,font,SCREEN_W/2,100,makecol(255,255,255),-1,"Vous êtes le pilote AGC et avez pour mission de lutter contre ces menaces.");
     textprintf_ex(screen,font,460,565,makecol(255,255,255),-1,"Appuyer sur espace pour continuer...");
 
     while(!key[KEY_SPACE]) rest(10);
