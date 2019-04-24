@@ -57,14 +57,16 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
             nouveau->affiche = load_bitmap("images\\ennemies\\BOSSa.bmp",NULL);
+
             break;
-        case 6: /// boss n°2
+        case 6:
             nouveau->depx=3;
             nouveau->depy=3;
             nouveau->hp=750;
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
             nouveau->affiche = load_bitmap("images\\ennemies\\BOSSb.bmp",NULL);
+
             break;
         case 7: /// boss n°3
             nouveau->depx=0;
@@ -73,6 +75,7 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->sp=100.0;
             nouveau->id=makecol(rand()%255,rand()%255,rand()%255);
             nouveau->affiche = load_bitmap("images\\ennemies\\BOSSc.bmp",NULL);
+
             break;
     }
 

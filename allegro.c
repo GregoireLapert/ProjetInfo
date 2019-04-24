@@ -49,7 +49,14 @@ void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* f
          if(ancre->tabActeur[i]!=NULL)
          {
              if(ancre->tabActeur[i]->etat!=0)
+             {
+
+
                 masked_blit(ancre->tabActeur[i]->affiche,screenBuffer,0,0,ancre->tabActeur[i]->posx,ancre->tabActeur[i]->posy,ancre->tabActeur[i]->tx,ancre->tabActeur[i]->ty);
+
+
+             }
+
          }
     }
 
