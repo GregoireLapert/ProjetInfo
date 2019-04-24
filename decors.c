@@ -96,38 +96,47 @@ void recupBitmapDecor(t_listeActeurs *ancre)
         {
             case 0:
                 ancre->decor[i]=load_bitmap("images\\Decor\\image\\a.bmp",NULL);
+                 ancre->explo[i]=load_bitmap("images\\exploa.bmp",NULL);
                 break;
 
             case 1:
                 ancre->decor[i]=load_bitmap("images\\Decor\\image\\b.bmp",NULL);
+                 ancre->explo[i]=load_bitmap("images\\explob.bmp",NULL);
                 break;
 
             case 2:
                 ancre->decor[i]=load_bitmap("images\\Decor\\image\\c.bmp",NULL);
+                  ancre->explo[i]=load_bitmap("images\\exploc.bmp",NULL);
                 break;
 
             case 3:
                 ancre->decor[i]=load_bitmap("images\\Decor\\image\\d.bmp",NULL);
+                 ancre->explo[i]=load_bitmap("images\\explod.bmp",NULL);
                 break;
 
             case 4:
                 ancre->decor[i]=load_bitmap("images\\Decor\\image\\e.bmp",NULL);
+                ancre->explo[i]=load_bitmap("images\\exploe.bmp",NULL);
                 break;
 
             case 5:
                 ancre->decor[i]=load_bitmap("images\\Decor\\image\\f.bmp",NULL);
+                 ancre->explo[i]=load_bitmap("images\\explof.bmp",NULL);
                 break;
 
             case 6:
+                   ancre->explo[i]=load_bitmap("images\\explog.bmp",NULL);
                 ancre->decor[i]=load_bitmap("images\\Decor\\image\\g.bmp",NULL);
                 break;
 
             case 7:
                 ancre->decor[i]=load_bitmap("images\\Decor\\image\\h.bmp",NULL);
+                  ancre->explo[i]=load_bitmap("images\\exploh.bmp",NULL);
                 break;
 
             case 8:
                 ancre->decor[i]=load_bitmap("images\\Decor\\image\\i.bmp",NULL);
+                   ancre->explo[i]=load_bitmap("images\\exploi.bmp",NULL);
                 break;
 
             case 9:
@@ -154,6 +163,7 @@ void recupBitmapDecor(t_listeActeurs *ancre)
                 ancre->decor[i]=load_bitmap("images\\Decor\\image\\o.bmp",NULL);
                 break;
         }
+
     }
 }
 

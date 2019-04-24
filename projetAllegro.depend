@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1556031037 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\acteur.c
+1556033623 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\acteur.c
 	"proto.h"
 
-1556032534 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\intervenant.c
+1556117321 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\intervenant.c
 	"proto.h"
 
 1555855341 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\main.c
@@ -10,22 +10,23 @@
 	<time.h>
 	"proto.h"
 
-1556026568 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\allegro.c
+1556117609 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\allegro.c
 	"proto.h"
 	<allegro.h>
 
-1556029892 d:\cour\informatique\projet perso\projet-informatique\projetinfo\proto.h
+1556116238 d:\cour\informatique\projet perso\projet-informatique\projetinfo\proto.h
 	<allegro.h>
 	<stdlib.h>
 	<stdio.h>
 	<time.h>
 
-1556033365 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\structure.c
+1556116602 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\structure.c
 	"proto.h"
 
-1556026568 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\action.c
+1556033607 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\action.c
 	"proto.h"
 	<allegro.h>
+	<time.h>
 
 1554495475 source:c:\users\bibes\desktop\exo info\projet\projetinfo\projetinfo\acteur.c
 
@@ -89,7 +90,7 @@
 	"proto.h"
 	<allegro.h>
 
-1556032395 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\jeu.c
+1556116395 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\jeu.c
 	"proto.h"
 	<allegro.h>
 
@@ -191,10 +192,10 @@
 1556036797 source:c:\exo info\allegro\projet\projetinfo\projetinfo\projetinfo\acteur.c
 	"proto.h"
 
-1555948718 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\decors.c
+1556116322 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\decors.c
 	"proto.h"
 
-1556032364 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\ennemis.c
+1556114548 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\ennemis.c
 	"proto.h"
 
 1555881940 ter

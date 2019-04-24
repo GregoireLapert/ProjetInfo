@@ -92,10 +92,13 @@ void deplacementIntervenant(t_listeActeurs* ancre)
 
     for(i=compteur;i<ancre->nInter+compteur;i++)
     {
-        if(ancre->tabInter[i]!=NULL)
+        if(ancre->tabInter[i]!=NULL )
         {
+
             ancre->tabInter[i]->posx+=ancre->tabInter[i]->depx;
             ancre->tabInter[i]->posy+=ancre->tabInter[i]->depy;
+
+
         }
         else
         {

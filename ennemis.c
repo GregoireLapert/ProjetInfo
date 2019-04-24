@@ -156,7 +156,7 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
     {
          if(ancre->tabInter[i]!=NULL)
          {
-             if(ancre->tabInter[i]->etat!=0)
+             if(ancre->tabInter[i]->etat==1)
                {
                 gauche=getpixel(buffer,ancre->tabInter[i]->posx-5,ancre->tabInter[i]->posy+(ancre->tabInter[i]->ty/2));
                 droite=getpixel(buffer,ancre->tabInter[i]->posx+ancre->tabInter[i]->tx,ancre->tabInter[i]->posy+(ancre->tabInter[i]->ty/2));
@@ -175,7 +175,7 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
                                 {
                                     ancre->tabActeur[cpt]->hp-=ancre->tabInter[i]->degat;
                                     //caler bitmap explosions
-                                    ancre->tabInter[i]->etat=0;
+                                    ancre->tabInter[i]->etat=2;
 
                                 }
                             }
@@ -190,7 +190,7 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
                     if(gauche==makecol(0,255,0) || droite==makecol(0,255,0))
                     {
                        ancre->tabActeur[0]->hp-=ancre->tabInter[i]->degat;
-                       ancre->tabInter[i]->etat=0;
+                       ancre->tabInter[i]->etat=2;
                        //caler bitmap explosions
                     }
                 }
@@ -254,20 +254,7 @@ void collisionTir(BITMAP* buffer,t_listeActeurs* ancre)
            ancre->tabActeur[0]->hp-=0.1;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
 
 

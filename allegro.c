@@ -12,7 +12,7 @@ BITMAP* objet(int tx,int ty,int couleur)
 }
 
 ///Affichage
-void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre)
+void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre,BITMAP** explo)
 {
     int i=0;
 
@@ -41,6 +41,9 @@ void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* f
 	///Fin scroll decor avant
 
 	///Parcours et affichage des acteurs
+	//test
+
+	//fin test
     for(i=0;i<ancre->maxiActeur;i++)
     {
          if(ancre->tabActeur[i]!=NULL)
@@ -55,8 +58,15 @@ void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* f
     {
          if(ancre->tabInter[i]!=NULL)
          {
-             if(ancre->tabInter[i]->etat!=0)
+             if(ancre->tabInter[i]->etat==1)
                 masked_blit(ancre->tabInter[i]->affiche,screenBuffer,0,0,ancre->tabInter[i]->posx,ancre->tabInter[i]->posy,ancre->tabInter[i]->tx,ancre->tabInter[i]->ty);
+             else
+             {
+                 ancre->tabInter[i]->depx=0;
+                 ancre->tabInter[i]->depy=0;
+                  masked_blit(explo[(ancre->tabInter[i]->etat)-2],screenBuffer,0,0,ancre->tabInter[i]->posx,ancre->tabInter[i]->posy,explo[(ancre->tabInter[i]->etat)-2]->w,explo[(ancre->tabInter[i]->etat)-2]->h);
+                  ancre->tabInter[i]->etat+=1;
+             }
          }
     }
 
