@@ -41,6 +41,27 @@ int Niveau(int niveau, int xFond)
         exit(EXIT_FAILURE);
     }
 
+    if (!bonus)
+    {
+        allegro_message("pas pu trouver/charger bonus.wav");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
+
+    if (!missile)
+    {
+        allegro_message("pas pu trouver/charger missile.wav");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
+
+    if (!laser)
+    {
+        allegro_message("pas pu trouver/charger laser.wav");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
+
     if(niveau==1)
         TypeBoss=5;
     else if(niveau==2)

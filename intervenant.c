@@ -32,17 +32,16 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->tx=30;
         nouveau->ty=15;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,165,0));
-        nouveau->degat=20;
+        nouveau->degat=2;
         break;
-   case 4://lance flammes boss
+   case 4://lance flammes boss 2
         nouveau->depx=-10;
         nouveau->depy=0;
         nouveau->tx=22;
         nouveau->ty=5;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,165,0));
-        nouveau->degat=20;
+        nouveau->degat=2;
         break;
-
 
     case 5: ///laser vaisseau ennemi
         nouveau->depx=-20;
@@ -92,7 +91,7 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->tx=40;
         nouveau->ty=10;
         nouveau->affiche=objet(nouveau->tx,nouveau->ty,makecol(255,0,0));
-        nouveau->degat=20;
+        nouveau->degat=2;
         break;
     }
 
