@@ -74,7 +74,7 @@ t_intervenant* constructeurIntervenant(int x,int y,int typ)
         nouveau->depx=-5;
         nouveau->depy=0;
         nouveau->tx=40;
-        nouveau->ty=1;
+        nouveau->ty=41;
         nouveau->affiche=load_bitmap("images\\plusmissils.bmp",NULL);
         nouveau->degat=0;
         break;

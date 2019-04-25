@@ -11,6 +11,7 @@ int main()
     install_keyboard();
     install_mouse();
     install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT,NULL);
+    set_uformat(U_ASCII);
 
     set_color_depth(desktop_color_depth());
     if (set_gfx_mode(GFX_AUTODETECT_WINDOWED,800,600,0,0)!=0)
@@ -21,7 +22,21 @@ int main()
     }
 
     SAMPLE*music=load_sample("music.wav");
+    SAMPLE*bouton=load_sample("bouton1.wav");
+    SAMPLE*valider=load_sample("valider1.wav");
 
+    if(!bouton)
+    {
+        allegro_message("N'a pas pu trouver bouton1.wav");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
+    if(!valider)
+    {
+        allegro_message("N'a pas pu trouver valider1.wav");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
     if(!music)
     {
         allegro_message("N'a pas pu trouver music.wav");
@@ -35,6 +50,8 @@ int main()
 
     show_mouse(screen);
     int fin,choix=789;
+    int volume=3;
+    int son=20;
 
     while(fin!=1)
     {
@@ -43,7 +60,9 @@ int main()
 
         ///Menu principal
         if(choix==1)
-            MenuJouer(&choix);
+            MenuJouer(&choix,bouton,valider);
+        else if(choix==2)
+            Options(&choix,music,bouton,valider,&volume,&son);
         else if(choix==3)
             fin=1;
         ///Jeu
@@ -77,11 +96,12 @@ int main()
             jeu(1,1,0,9300);
             choix=-1;
         }
-        else MenuPrincipal(&choix);
-
+        else MenuPrincipal(&choix,bouton,valider);
     }
 
     destroy_sample(music);
+    destroy_sample(bouton);
+    destroy_sample(valider);
 
     return 0;
 }

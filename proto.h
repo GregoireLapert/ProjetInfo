@@ -76,9 +76,10 @@ typedef struct listeActeurs
 BITMAP* objet(int tx,int ty,int couleur);
 
 /***Menu Principal***/
-void MenuPrincipal(int*choix);
-void MenuJouer(int*choix);
-void MenuNiveau(int*choix);
+void MenuPrincipal(int*choix, SAMPLE*bouton, SAMPLE*valider);
+void Options(int*choix, SAMPLE*music, SAMPLE*bouton, SAMPLE*valider, int* volume, int* son);
+void MenuJouer(int*choix, SAMPLE*bouton, SAMPLE*valider);
+void MenuNiveau(int*choix, SAMPLE*bouton, SAMPLE*valider);
 void AffMJ();
 void AffMP();
 void AffMM();
@@ -120,7 +121,7 @@ int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3);
 void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ);
 void TirEnnemi(t_listeActeurs* ancre);
 void AffichageBuffer(BITMAP* buffer,t_listeActeurs* ancre);
-void collisionTir(BITMAP* buffer,t_listeActeurs* ancre);//
+void collisionTir(BITMAP* buffer,t_listeActeurs* ancre, SAMPLE*bonus);
 void exploInter(t_listeActeurs* ancre,BITMAP** tab,BITMAP* screenBuffer);
 void popBonus(int xFond,t_listeActeurs* ancre);
 
