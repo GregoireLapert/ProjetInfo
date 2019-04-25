@@ -95,7 +95,7 @@ void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ);   ///test et a
 
 /***action***/
 void deplacementPersonnage(t_listeActeurs* ancre);
-void tirPersonnage(t_listeActeurs* ancre, int *xpage);
+void tirPersonnage(t_listeActeurs* ancre, int *xpage, SAMPLE*missile, SAMPLE*laser);
 
 void deplacementIntervenant(t_listeActeurs* ancre);
 void deplacementEnnemi(t_listeActeurs* ancre);
@@ -110,10 +110,8 @@ void recupBitmapDecor(t_listeActeurs *ancre);
 BITMAP* fondDecor(t_listeActeurs *ancre,BITMAP* ancienFond);
 void generateurDecor(t_listeActeurs *ancre);
 BITMAP *fondBuffer(t_listeActeurs* ancre,BITMAP* ancienFond);
-void creerDecor(t_listeActeurs* ancre,BITMAP* fond,BITMAP* buffer);
 void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre);
 void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre);
-void deplacementEnnemi(t_listeActeurs* ancre);
 int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3);
 
 
@@ -122,7 +120,6 @@ void popBoss(int x,t_listeActeurs* ancre,int* actif,int typ);
 void TirEnnemi(t_listeActeurs* ancre);
 void AffichageBuffer(BITMAP* buffer,t_listeActeurs* ancre);
 void collisionTir(BITMAP* buffer,t_listeActeurs* ancre, SAMPLE*bonus);
-void exploInter(t_listeActeurs* ancre,BITMAP** tab,BITMAP* screenBuffer);
 void popBonus(int xFond,t_listeActeurs* ancre);
 
 #endif // PROTO_H_INCLUDED
