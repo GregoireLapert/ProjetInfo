@@ -98,15 +98,15 @@
 	"proto.h"
 	<allegro.h>
 
-1556130852 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\acteur.c
+1556149060 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\acteur.c
 	"proto.h"
 
-1556130655 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\action.c
+1556149060 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\action.c
 	"proto.h"
 	<allegro.h>
 	<time.h>
 
-1556137651 c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\proto.h
+1556200200 c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\proto.h
 	<allegro.h>
 	<stdlib.h>
 	<stdio.h>
@@ -119,7 +119,7 @@
 	"proto.h"
 	<allegro.h>
 
-1556130852 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\allegro.c
+1556149060 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\allegro.c
 	"proto.h"
 	<allegro.h>
 
@@ -136,10 +136,10 @@
 	<time.h>
 	"proto.h"
 
-1556121730 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\structure.c
+1556149061 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\structure.c
 	"proto.h"
 
-1556121729 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\decors.c
+1556149060 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\decors.c
 	"proto.h"
 
 1556132501 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\ennemis.c

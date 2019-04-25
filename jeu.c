@@ -85,7 +85,7 @@ void tutoriel()
     masked_blit(touchew,screen,0,0,115,450,touchew->w,touchew->h);
 
     textprintf_centre_ex(screen,font,SCREEN_W/2,60,makecol(255,255,255),-1,"A cause de la pollution, l'atmosphère s'est trouée. En plus de laisser passer");
-    textprintf_centre_ex(screen,font,SCREEN_W/2,80,makecol(255,255,255),-1,"les astéroïdes, divers mutations ont été repérées.");
+    textprintf_centre_ex(screen,font,SCREEN_W/2,80,makecol(255,255,255),-1,"les astéroïdes, diverses mutations ont été repérées.");
     textprintf_centre_ex(screen,font,SCREEN_W/2,100,makecol(255,255,255),-1,"Vous êtes le pilote AGC et avez pour mission de lutter contre ces menaces.");
     textprintf_ex(screen,font,460,565,makecol(255,255,255),-1,"Appuyer sur espace pour continuer...");
 
