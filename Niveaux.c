@@ -9,6 +9,8 @@ int Niveau(int niveau, int xFond)
     t_listeActeurs* ancre=creerListe(80);
     ///Son bonus
     SAMPLE*bonus=load_sample("valider1.wav");
+    SAMPLE*missile=load_sample("sons\\lasergn.wav");
+    SAMPLE*laser=load_sample("sons\\3532.wav");
 
     ///D�claration des bitmap a utiliser
 
@@ -106,7 +108,7 @@ int Niveau(int niveau, int xFond)
             deplacementPersonnage(ancre);
             deplacementEnnemi(ancre);
             deplacementIntervenant(ancre);
-            tirPersonnage(ancre,&xPage);
+            tirPersonnage(ancre,&xPage,missile,laser);
             TirEnnemi(ancre);
             collisionDecor(fond,xFond,ancre);
             Affichage(&xPage,&xFond,screenBuffer,page,fond,bufferColi,ancre);
@@ -145,6 +147,8 @@ int Niveau(int niveau, int xFond)
     for(i=0;i<15;i++)
         destroy_bitmap(ancre->decor[i]);
     destroy_sample(bonus);
+    destroy_sample(missile);
+    destroy_sample(laser);
     free(ancre);
 
     return clear;

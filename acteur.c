@@ -49,7 +49,7 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->affiche = load_bitmap("images\\ennemies\\m6.bmp",NULL);
 
             break;
-            
+
         case 5: /// boss n°1
             nouveau->depx=2;
             nouveau->depy=2;
@@ -59,8 +59,8 @@ t_acteur* constructeurActeur(int x,int y,int typ)
             nouveau->affiche = load_bitmap("images\\ennemies\\BOSSa.bmp",NULL);
 
             break;
-        case 6:
-            nouveau->depx=3;
+        case 6: /// Boss 2
+            nouveau->depx=2;
             nouveau->depy=3;
             nouveau->hp=750;
             nouveau->sp=100.0;

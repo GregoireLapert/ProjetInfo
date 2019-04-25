@@ -95,7 +95,7 @@ void ajoutIntervenant(t_listeActeurs* ancre,int x,int y,int typ);   ///test et a
 
 /***action***/
 void deplacementPersonnage(t_listeActeurs* ancre);
-void tirPersonnage(t_listeActeurs* ancre, int *xpage);
+void tirPersonnage(t_listeActeurs* ancre, int *xpage, SAMPLE*missile, SAMPLE*laser);
 
 void deplacementIntervenant(t_listeActeurs* ancre);
 void deplacementEnnemi(t_listeActeurs* ancre);
@@ -112,7 +112,6 @@ void generateurDecor(t_listeActeurs *ancre);
 BITMAP *fondBuffer(t_listeActeurs* ancre,BITMAP* ancienFond);
 void Affichage (int *xPage,int *xFond,BITMAP* screenBuffer,BITMAP*page,BITMAP* fond,BITMAP* bufColi,t_listeActeurs* ancre);
 void collisionDecor(BITMAP* fond,int x,t_listeActeurs* ancre);
-void deplacementEnnemi(t_listeActeurs* ancre);
 int PopEnnemis(t_listeActeurs* ancre, int place, int val1, int val2, int val3);
 
 

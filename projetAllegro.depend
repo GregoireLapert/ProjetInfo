@@ -98,15 +98,15 @@
 	"proto.h"
 	<allegro.h>
 
-1556149060 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\acteur.c
+1556216329 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\acteur.c
 	"proto.h"
 
-1556149060 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\action.c
+1556216872 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\action.c
 	"proto.h"
 	<allegro.h>
 	<time.h>
 
-1556212275 c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\proto.h
+1556216919 c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\proto.h
 	<allegro.h>
 	<stdlib.h>
 	<stdio.h>
@@ -202,7 +202,7 @@
 1555881940 ter
 	"proto.h"
 
-1556200200 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\niveaux.c
+1556216872 source:c:\users\principal\3d objects\documents\semestre 2 ece\informatique\projet info\projet info\projetinfo\niveaux.c
 	"proto.h"
 
 1556125524 source:d:\cour\informatique\projet perso\projet-informatique\projetinfo\niveaux.c
